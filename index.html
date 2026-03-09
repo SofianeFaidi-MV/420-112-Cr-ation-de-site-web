@@ -495,11 +495,11 @@
       <section class="section searchable" id="structure-html" data-title="Structure HTML">
         <div class="section-header">
           <h2>Structure de base d’un fichier HTML</h2>
-          <div class="chips"><span class="chip">HTML</span><span class="chip">Balises</span></div>
+          <div class="chips"><span class="chip">HTML</span><span class="chip">Balises</span><span class="chip">Head / Body</span></div>
         </div>
         <div class="lesson">
-          <h3>Le squelette minimal</h3>
-          <p>Un document HTML contient généralement la déclaration du type de document, l’élément racine <code>&lt;html&gt;</code>, une section <code>&lt;head&gt;</code> pour les métadonnées et une section <code>&lt;body&gt;</code> pour le contenu visible.</p>
+          <h3>Le squelette minimal d’une page</h3>
+          <p>Un document HTML commence par la déclaration <code>&lt;!DOCTYPE html&gt;</code>, suivie de la balise racine <code>&lt;html&gt;</code>. La section <code>&lt;head&gt;</code> contient les métadonnées de la page et <code>&lt;body&gt;</code> contient tout le contenu visible à l’écran.</p>
           <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="fr"&gt;
 &lt;head&gt;
@@ -509,18 +509,22 @@
 &lt;/head&gt;
 &lt;body&gt;
   &lt;h1&gt;Bonjour !&lt;/h1&gt;
-  &lt;p&gt;Bienvenue dans le cours.&lt;/p&gt;
+  &lt;p&gt;Bienvenue dans le cours de création de sites Web.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
-          <h4>Éléments importants</h4>
+          <h4>À quoi servent ces balises ?</h4>
           <ul>
-            <li><code>&lt;title&gt;</code> définit le titre de l’onglet du navigateur.</li>
-            <li><code>&lt;meta charset&gt;</code> permet d’afficher correctement les caractères accentués.</li>
-            <li><code>&lt;meta name="viewport"&gt;</code> est important pour les écrans mobiles.</li>
+            <li><code>&lt;meta charset="UTF-8"&gt;</code> : gère correctement les accents et caractères spéciaux.</li>
+            <li><code>&lt;meta name="viewport"&gt;</code> : prépare l’affichage mobile.</li>
+            <li><code>&lt;title&gt;</code> : texte affiché dans l’onglet du navigateur.</li>
           </ul>
+          <div class="example">
+            <strong>Exemple</strong>
+            Dans Visual Studio Code, on crée souvent un fichier <code>index.html</code> comme page d’accueil du site.
+          </div>
           <div class="exercise">
             <strong>Exercice</strong>
-            Crée une page avec un titre principal, deux paragraphes et une ligne horizontale entre les deux.
+            Crée une page contenant un titre principal, un sous-titre, deux paragraphes et un lien vers un autre site.
           </div>
         </div>
       </section>
@@ -528,19 +532,25 @@
       <section class="section searchable" id="texte-html" data-title="Structuration du texte">
         <div class="section-header">
           <h2>Structuration du texte</h2>
-          <div class="chips"><span class="chip">Titres</span><span class="chip">Paragraphes</span><span class="chip">Mise en valeur</span></div>
+          <div class="chips"><span class="chip">Titres</span><span class="chip">Paragraphes</span><span class="chip">strong / em</span></div>
         </div>
         <div class="lesson">
-          <h3>Organiser le contenu textuel</h3>
-          <p>On utilise les titres <code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code>, les paragraphes <code>&lt;p&gt;</code>, les retours de ligne <code>&lt;br&gt;</code> et des balises comme <code>&lt;strong&gt;</code> ou <code>&lt;em&gt;</code> pour mettre en valeur des mots ou des idées.</p>
+          <h3>Organiser le texte dans une page</h3>
+          <p>HTML fournit plusieurs balises pour structurer clairement le contenu : titres, paragraphes, retours de ligne et balises de mise en valeur. Une bonne structure aide autant la lecture humaine que l’accessibilité.</p>
           <pre><code>&lt;h1&gt;Cours de création Web&lt;/h1&gt;
-&lt;h2&gt;Chapitre 1&lt;/h2&gt;
+&lt;h2&gt;Chapitre 1 : HTML&lt;/h2&gt;
 &lt;p&gt;Le HTML sert à structurer une page Web.&lt;/p&gt;
-&lt;p&gt;On peut mettre un mot en &lt;strong&gt;évidence&lt;/strong&gt; ou en &lt;em&gt;emphase&lt;/em&gt;.&lt;/p&gt;</code></pre>
-          <div class="example">
-            <strong>Exemple</strong>
-            Une bonne hiérarchie de titres aide l’utilisateur à lire la page et améliore aussi l’accessibilité.
-          </div>
+&lt;p&gt;On peut mettre un mot en &lt;strong&gt;évidence&lt;/strong&gt; ou en &lt;em&gt;emphase&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Première ligne&lt;br&gt;Deuxième ligne&lt;/p&gt;</code></pre>
+          <h4>Balises courantes</h4>
+          <ul>
+            <li><code>&lt;h1&gt;</code> à <code>&lt;h6&gt;</code> : niveaux de titres.</li>
+            <li><code>&lt;p&gt;</code> : paragraphe.</li>
+            <li><code>&lt;br&gt;</code> : retour de ligne.</li>
+            <li><code>&lt;strong&gt;</code> : importance forte.</li>
+            <li><code>&lt;em&gt;</code> : emphase.</li>
+          </ul>
+          <div class="note"><strong>À retenir</strong>Il vaut mieux utiliser les balises sémantiques que d’essayer de “dessiner” le texte uniquement avec le style.</div>
         </div>
       </section>
 
@@ -608,35 +618,58 @@
       <section class="section searchable" id="css-intro" data-title="Introduction CSS">
         <div class="section-header">
           <h2>Nos premiers pas avec CSS</h2>
-          <div class="chips"><span class="chip">Sélecteurs</span><span class="chip">Propriétés</span></div>
+          <div class="chips"><span class="chip">Sélecteurs</span><span class="chip">Propriétés</span><span class="chip">Styles</span></div>
         </div>
         <div class="lesson">
-          <h3>Pourquoi CSS ?</h3>
-          <p>HTML crée le squelette de la page, mais CSS lui donne son apparence. On peut modifier les couleurs, les marges, la taille des éléments, les bordures, les polices et la disposition générale.</p>
-          <h4>Où écrire le CSS ?</h4>
+          <h3>Pourquoi utiliser CSS ?</h3>
+          <p>HTML crée le squelette, CSS habille ce squelette. Grâce à CSS, on contrôle les couleurs, les espacements, les bordures, l’alignement, la largeur et l’apparence générale de la page.</p>
+          <h4>Trois façons d’écrire du CSS</h4>
           <ul>
-            <li><strong>Inline</strong> : dans l’attribut <code>style</code> d’un élément.</li>
-            <li><strong>Interne</strong> : dans une balise <code>&lt;style&gt;</code> dans le <code>&lt;head&gt;</code>.</li>
-            <li><strong>Externe</strong> : dans un fichier <code>.css</code> lié avec <code>&lt;link&gt;</code>.</li>
+            <li><strong>Inline</strong> : directement dans l’attribut <code>style</code>.</li>
+            <li><strong>Interne</strong> : avec une balise <code>&lt;style&gt;</code> dans <code>&lt;head&gt;</code>.</li>
+            <li><strong>Externe</strong> : dans un fichier <code>style.css</code>, méthode recommandée.</li>
           </ul>
+          <pre><code>&lt;head&gt;
+  &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;</code></pre>
           <pre><code>p {
   color: white;
   background-color: #203040;
   padding: 12px;
   border: 1px solid #4da3ff;
+  margin: 16px 0;
 }</code></pre>
-          <div class="note"><strong>Bonne pratique</strong>La méthode recommandée est le fichier CSS externe, plus facile à maintenir.</div>
+          <h4>Sélecteurs fréquents</h4>
+          <pre><code>* {
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #7cc4ff;
+}
+
+.important {
+  background-color: #1f2b40;
+}
+
+#entete {
+  border-bottom: 2px solid #4da3ff;
+}</code></pre>
+          <div class="exercise">
+            <strong>Exercice</strong>
+            Reproduis une boîte avec <code>width</code>, <code>background-color</code>, <code>border</code>, <code>padding</code> et <code>margin</code>.
+          </div>
         </div>
       </section>
 
       <section class="section searchable" id="styles-polices" data-title="Polices et styles">
         <div class="section-header">
           <h2>Polices de caractères et styles</h2>
-          <div class="chips"><span class="chip">font-family</span><span class="chip">font-size</span></div>
+          <div class="chips"><span class="chip">font-family</span><span class="chip">font-size</span><span class="chip">text-align</span></div>
         </div>
         <div class="lesson">
-          <h3>Choisir la bonne police</h3>
-          <p>Le choix d’une police influence la lisibilité et l’identité visuelle d’un site. On utilise souvent une liste de polices de repli pour s’adapter aux systèmes de l’utilisateur.</p>
+          <h3>Soigner la lisibilité</h3>
+          <p>Le choix d’une police influe sur la personnalité du site, mais aussi sur le confort de lecture. On choisit souvent une police principale et une ou plusieurs polices de repli.</p>
           <pre><code>body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -645,18 +678,24 @@
 
 h1 {
   font-weight: bold;
+  text-align: center;
+}
+
+p {
   font-style: normal;
 }</code></pre>
-          <div class="mini-card">
-            <h4>Propriétés courantes</h4>
-            <ul>
-              <li><code>font-family</code></li>
-              <li><code>font-size</code></li>
-              <li><code>font-weight</code></li>
-              <li><code>font-style</code></li>
-              <li><code>text-align</code></li>
-            </ul>
-          </div>
+          <table>
+            <thead>
+              <tr><th>Propriété</th><th>Utilité</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>font-family</code></td><td>Choix de la police</td></tr>
+              <tr><td><code>font-size</code></td><td>Taille du texte</td></tr>
+              <tr><td><code>font-weight</code></td><td>Épaisseur</td></tr>
+              <tr><td><code>font-style</code></td><td>Normal ou italique</td></tr>
+              <tr><td><code>text-align</code></td><td>Alignement du texte</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -778,49 +817,66 @@ h1 {
       <section class="section searchable" id="variables-constantes" data-title="Variables et constantes">
         <div class="section-header">
           <h2>Variables et constantes</h2>
-          <div class="chips"><span class="chip">let</span><span class="chip">const</span><span class="chip">prompt()</span></div>
+          <div class="chips"><span class="chip">let</span><span class="chip">const</span><span class="chip">prompt()</span><span class="chip">alert()</span></div>
         </div>
         <div class="lesson">
-          <h3>Stocker des valeurs</h3>
-          <p>Les variables servent à conserver des informations en mémoire. En JavaScript moderne, on utilise surtout <code>let</code> pour une valeur modifiable et <code>const</code> pour une valeur qui ne doit pas être réassignée.</p>
+          <h3>Stocker et récupérer des valeurs</h3>
+          <p>Les variables servent à conserver une information en mémoire. Les constantes contiennent une valeur qui doit être fournie dès la déclaration et qui ne sera pas réassignée ensuite.</p>
           <pre><code>let nom = "Sofiane";
+let age = 19;
 const cours = "420-112";
 
 alert("Bonjour " + nom);
-
-let age = prompt("Quel âge as-tu ?");
-console.log(age);</code></pre>
+let ville = prompt("Dans quelle ville habites-tu ?");
+console.log(ville);</code></pre>
           <h4>Règles de nommage</h4>
           <ul>
-            <li>Pas d’espace dans le nom.</li>
-            <li>Éviter de commencer par un chiffre.</li>
+            <li>Utiliser lettres, chiffres, <code>$</code> et <code>_</code>.</li>
+            <li>Ne pas commencer par un chiffre.</li>
             <li>Respecter la casse : <code>nom</code> et <code>Nom</code> sont différents.</li>
           </ul>
+          <h4>Opérateurs utiles</h4>
+          <pre><code>let a = 10;
+let b = "10";
+
+console.log(a == b);   // true
+console.log(a === b);  // false
+console.log(a != b);   // false
+console.log(a !== b);  // true
+console.log(a &gt; 5);    // true</code></pre>
+          <div class="note"><strong>À retenir</strong><code>==</code> compare les valeurs, alors que <code>===</code> compare à la fois la valeur et le type.</div>
         </div>
       </section>
 
       <section class="section searchable" id="chaines-math-dates" data-title="Chaînes math dates">
         <div class="section-header">
           <h2>Méthodes sur les chaînes, fonctions mathématiques et dates</h2>
-          <div class="chips"><span class="chip">string</span><span class="chip">Math</span><span class="chip">Date</span></div>
+          <div class="chips"><span class="chip">String</span><span class="chip">Math</span><span class="chip">Date</span></div>
         </div>
         <div class="lesson">
-          <h3>Manipuler les chaînes</h3>
+          <h3>Chaînes de caractères</h3>
+          <p>En JavaScript, les chaînes sont des objets. On utilise des méthodes pour mesurer leur longueur, transformer leur casse, trouver du texte, extraire une partie ou concaténer plusieurs valeurs.</p>
           <pre><code>let texte = "Développement Web";
+let prenom = 'Sofiane';
+
 console.log(texte.length);
 console.log(texte.toUpperCase());
+console.log(texte.toLowerCase());
 console.log(texte.includes("Web"));
-console.log(texte.substring(0, 13));</code></pre>
+console.log(texte.substring(0, 13));
+console.log("Bonjour " + prenom);</code></pre>
           <h3>Fonctions mathématiques</h3>
           <pre><code>console.log(Math.round(4.6));
 console.log(Math.floor(4.6));
 console.log(Math.ceil(4.1));
+console.log(Math.max(5, 12, 8));
 console.log(Math.random());</code></pre>
           <h3>Dates</h3>
-          <pre><code>let aujourdHui = new Date();
-console.log(aujourdHui.getFullYear());
-console.log(aujourdHui.getMonth() + 1);
-console.log(aujourdHui.getDate());</code></pre>
+          <pre><code>let maintenant = new Date();
+console.log(maintenant.getFullYear());
+console.log(maintenant.getMonth() + 1);
+console.log(maintenant.getDate());
+console.log(maintenant.getDay());</code></pre>
         </div>
       </section>
 
@@ -888,13 +944,14 @@ for (let couleur of couleurs) {
         </div>
         <div class="lesson">
           <h3>Comprendre le DOM</h3>
-          <p>Le DOM représente la page comme un ensemble de nœuds et d’objets manipulables. Chaque élément HTML peut être ciblé et modifié par JavaScript.</p>
+          <p>Le DOM représente le document HTML comme un arbre de nœuds. Les catégories les plus importantes sont le document, les éléments et les attributs. Cela permet à JavaScript d’accéder à n’importe quelle partie d’une page et de la modifier.</p>
           <h3>Fonctions</h3>
           <pre><code>function saluer(nom) {
   return "Bonjour " + nom;
 }
 
-console.log(saluer("Marie"));</code></pre>
+let message = saluer("Marie");
+console.log(message);</code></pre>
           <h3>Objets</h3>
           <pre><code>let etudiant = {
   nom: "Ali",
@@ -902,18 +959,22 @@ console.log(saluer("Marie"));</code></pre>
   session: 1
 };
 
-console.log(etudiant.nom);</code></pre>
+console.log(etudiant.nom);
+console.log(etudiant.session);</code></pre>
+          <h3>Une mise en garde importante</h3>
+          <pre><code>document.write("Texte affiché dans la page");</code></pre>
+          <div class="note"><strong>Attention</strong><code>document.write()</code> est utile pour comprendre certains exemples, mais il est généralement déconseillé dans les pages modernes, car il peut écraser le contenu du document après le chargement.</div>
         </div>
       </section>
 
       <section class="section searchable" id="javascript-dom" data-title="JavaScript et le DOM">
         <div class="section-header">
           <h2>JavaScript et le DOM</h2>
-          <div class="chips"><span class="chip">getElementById</span><span class="chip">event</span></div>
+          <div class="chips"><span class="chip">getElementById</span><span class="chip">innerHTML</span><span class="chip">textContent</span></div>
         </div>
         <div class="lesson">
-          <h3>Modifier une page avec JavaScript</h3>
-          <p>Grâce au DOM, JavaScript peut accéder au contenu, au style et aux attributs des éléments HTML, puis les modifier selon les actions de l’utilisateur.</p>
+          <h3>Accéder aux éléments HTML</h3>
+          <p>JavaScript peut cibler des éléments avec plusieurs méthodes, par exemple <code>getElementById()</code>, <code>getElementsByTagName()</code>, <code>getElementsByClassName()</code> ou <code>querySelectorAll()</code>.</p>
           <pre><code>&lt;h1 id="titre"&gt;Titre initial&lt;/h1&gt;
 &lt;button onclick="changerTitre()"&gt;Changer le titre&lt;/button&gt;
 
@@ -922,6 +983,13 @@ function changerTitre() {
   document.getElementById("titre").textContent = "Titre modifié";
 }
 &lt;/script&gt;</code></pre>
+          <pre><code>&lt;p class="info"&gt;Premier paragraphe&lt;/p&gt;
+&lt;p class="info"&gt;Deuxième paragraphe&lt;/p&gt;
+
+&lt;script&gt;
+const paragraphes = document.getElementsByClassName("info");
+paragraphes[1].className = "info important";
+&lt;/script&gt;</code></pre>
           <pre><code>&lt;input id="nom" type="text" placeholder="Votre nom"&gt;
 &lt;button id="btn"&gt;Afficher&lt;/button&gt;
 &lt;p id="resultat"&gt;&lt;/p&gt;
@@ -929,26 +997,32 @@ function changerTitre() {
 &lt;script&gt;
 document.getElementById("btn").addEventListener("click", function () {
   const valeur = document.getElementById("nom").value;
-  document.getElementById("resultat").textContent = "Bonjour " + valeur;
+  document.getElementById("resultat").innerHTML = "Bonjour &lt;strong&gt;" + valeur + "&lt;/strong&gt;";
 });
 &lt;/script&gt;</code></pre>
+          <div class="note"><strong>Différence importante</strong><code>textContent</code> sert surtout à modifier du texte simple, tandis que <code>innerHTML</code> permet d’insérer aussi des balises HTML.</div>
         </div>
       </section>
 
       <section class="section searchable" id="exercices-guides" data-title="Exercices guidés">
         <div class="section-header">
           <h2>Exercices guidés</h2>
-          <div class="chips"><span class="chip">Pratique</span><span class="chip">Laboratoire</span></div>
+          <div class="chips"><span class="chip">Pratique</span><span class="chip">Laboratoire</span><span class="chip">Réinvestissement</span></div>
         </div>
         <div class="lesson">
-          <h3>Exercice 1 — Page de présentation</h3>
-          <p>Crée une page avec un titre, un paragraphe de bienvenue, une image et un lien vers un autre site.</p>
-          <h3>Exercice 2 — Tableau d’horaires</h3>
-          <p>Crée un tableau contenant les jours de la semaine, les cours et les heures.</p>
-          <h3>Exercice 3 — Formulaire de contact</h3>
-          <p>Construit un formulaire avec nom, courriel, message et bouton d’envoi.</p>
-          <h3>Exercice 4 — Interaction JavaScript</h3>
-          <p>Ajoute un bouton qui change la couleur d’un paragraphe ou son texte lorsqu’on clique dessus.</p>
+          <h3>Exercice 1 — Liens externes</h3>
+          <pre><code>&lt;a href="https://www.example.com" target="_blank"&gt;Visitez Example&lt;/a&gt;</code></pre>
+          <h3>Exercice 2 — Liens internes</h3>
+          <pre><code>&lt;a href="#section1"&gt;Aller à la section 1&lt;/a&gt;
+&lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;</code></pre>
+          <h3>Exercice 3 — Lien courriel</h3>
+          <pre><code>&lt;a href="mailto:example@example.com"&gt;Envoyer un e-mail&lt;/a&gt;</code></pre>
+          <h3>Exercice 4 — Boucle JavaScript</h3>
+          <pre><code>for (let i = 0; i &lt; 5; i++) {
+  console.log("Bienvenue dans le cours de Développement Web II");
+}</code></pre>
+          <h3>Exercice 5 — Formulaire</h3>
+          <p>Construis un formulaire avec <code>name</code>, <code>action</code>, <code>method</code>, un champ texte, un champ courriel et un bouton d’envoi.</p>
         </div>
       </section>
 
