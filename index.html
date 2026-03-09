@@ -6,21 +6,19 @@
   <title>420-112 – Création de sites web</title>
   <style>
     :root {
-      --bg: #07111f;
-      --bg-2: #0c1930;
-      --panel: rgba(14, 23, 48, 0.82);
-      --panel-strong: #121f3f;
-      --panel-soft: rgba(255,255,255,0.05);
-      --text: #eef4ff;
-      --muted: #bcc9e6;
-      --accent: #66d9ff;
-      --accent-2: #7b8cff;
-      --accent-3: #8ef0d0;
-      --border: rgba(255,255,255,0.11);
-      --shadow: 0 14px 40px rgba(0,0,0,0.30);
-      --radius: 20px;
-      --radius-lg: 28px;
-      --maxw: 1240px;
+      --bg: #0b0f17;
+      --bg-soft: #121826;
+      --panel: #151b2d;
+      --panel-2: #1b2338;
+      --text: #eef2ff;
+      --muted: #b7c0dd;
+      --line: rgba(255,255,255,0.1);
+      --blue: #5aa9ff;
+      --green: #7ee787;
+      --yellow: #f2cc60;
+      --pink: #ff6aa9;
+      --shadow: 0 16px 40px rgba(0,0,0,0.35);
+      --radius: 18px;
     }
 
     * { box-sizing: border-box; }
@@ -28,20 +26,17 @@
     body {
       margin: 0;
       font-family: Inter, Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0a0f17 0%, #101727 100%);
       color: var(--text);
-      line-height: 1.6;
-      background:
-        radial-gradient(circle at top right, rgba(123,140,255,0.22), transparent 28%),
-        radial-gradient(circle at top left, rgba(102,217,255,0.16), transparent 26%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+      line-height: 1.65;
     }
 
-    a { color: var(--accent); text-decoration: none; }
+    a { color: var(--blue); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .layout {
       display: grid;
-      grid-template-columns: 310px 1fr;
+      grid-template-columns: 320px 1fr;
       min-height: 100vh;
     }
 
@@ -50,285 +45,249 @@
       top: 0;
       height: 100vh;
       overflow-y: auto;
-      padding: 28px 20px;
-      background: rgba(8, 14, 29, 0.88);
-      border-right: 1px solid var(--border);
-      backdrop-filter: blur(14px);
+      background: rgba(13, 18, 29, 0.96);
+      border-right: 1px solid var(--line);
+      padding: 24px 18px;
     }
 
     .brand {
-      padding: 22px;
-      border-radius: var(--radius-lg);
-      background: linear-gradient(135deg, rgba(123,140,255,0.24), rgba(102,217,255,0.14));
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      margin-bottom: 24px;
-      position: relative;
-      overflow: hidden;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .brand::after {
-      content: "";
-      position: absolute;
-      inset: auto -40px -40px auto;
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(circle, rgba(255,255,255,0.22), transparent 70%);
-      pointer-events: none;
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(90,169,255,0.25), rgba(126,231,135,0.15));
+      color: var(--blue);
+      font-weight: 800;
+      font-size: 1.1rem;
+      flex-shrink: 0;
     }
 
     .brand h1 {
-      font-size: 1.55rem;
-      line-height: 1.15;
-      margin: 0 0 12px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .brand p {
       margin: 0;
-      color: var(--muted);
-      font-size: 0.96rem;
-      position: relative;
-      z-index: 1;
+      font-size: 1.05rem;
+      line-height: 1.35;
+      font-weight: 700;
     }
 
-    .nav-title {
-      font-size: 0.82rem;
+    .search {
+      width: 100%;
+      margin: 14px 0 22px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .menu-title {
+      color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--muted);
-      margin: 24px 0 10px;
+      font-size: 0.75rem;
+      margin: 18px 0 10px;
     }
 
-    .nav-links {
-      display: grid;
-      gap: 10px;
+    .menu, .submenu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .nav-links a {
+    .menu li a, .submenu li a {
       display: block;
-      padding: 12px 14px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid transparent;
-      border-radius: 14px;
+      padding: 10px 12px;
+      border-radius: 12px;
       color: var(--text);
       transition: 0.2s ease;
     }
 
-    .nav-links a:hover {
-      background: rgba(123,140,255,0.13);
-      border-color: var(--border);
+    .menu li a:hover, .submenu li a:hover {
+      background: rgba(255,255,255,0.05);
       text-decoration: none;
-      transform: translateX(2px);
     }
 
-    .content { padding: 34px; }
-    .container { max-width: var(--maxw); margin: 0 auto; }
+    .submenu {
+      margin-left: 16px;
+      border-left: 1px solid rgba(255,255,255,0.08);
+      padding-left: 10px;
+    }
+
+    .active-link {
+      background: rgba(90,169,255,0.12);
+      border: 1px solid rgba(90,169,255,0.18);
+    }
+
+    .content {
+      padding: 28px 36px 50px;
+      max-width: 1180px;
+    }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 18px;
+    }
 
     .hero {
-      padding: 38px;
-      border-radius: 32px;
-      background:
-        linear-gradient(135deg, rgba(123,140,255,0.22), rgba(102,217,255,0.11)),
-        rgba(255,255,255,0.03);
-      border: 1px solid var(--border);
+      padding: 26px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, rgba(90,169,255,0.12), rgba(126,231,135,0.06));
+      border: 1px solid var(--line);
       box-shadow: var(--shadow);
       margin-bottom: 28px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: "</>";
-      position: absolute;
-      right: 28px;
-      bottom: 6px;
-      font-size: clamp(3rem, 10vw, 8rem);
-      font-weight: 800;
-      color: rgba(255,255,255,0.06);
-      letter-spacing: -0.08em;
-      pointer-events: none;
-    }
-
-    .hero .badge {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: rgba(102,217,255,0.12);
-      border: 1px solid rgba(102,217,255,0.28);
-      color: var(--accent);
-      font-size: 0.88rem;
-      margin-bottom: 16px;
     }
 
     .hero h2 {
-      font-size: clamp(2.1rem, 4vw, 3.3rem);
-      margin: 0 0 14px;
-      line-height: 1.08;
-      max-width: 760px;
-      position: relative;
-      z-index: 1;
+      margin: 0 0 10px;
+      font-size: 2rem;
+      line-height: 1.15;
     }
 
     .hero p {
+      margin: 0;
       color: var(--muted);
       max-width: 820px;
-      margin: 0 0 24px;
-      font-size: 1.04rem;
-      position: relative;
-      z-index: 1;
     }
 
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 22px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 18px;
+    .notice {
+      margin-top: 16px;
+      padding: 12px 14px;
       border-radius: 14px;
-      background: linear-gradient(135deg, var(--accent-2), #5d74ff);
-      color: white;
-      font-weight: 700;
-      border: none;
-      box-shadow: var(--shadow);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      color: var(--muted);
     }
 
-    .btn.secondary {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-      box-shadow: none;
+    .section {
+      margin: 36px 0;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
-    .hero-stats {
+    .section h3 {
+      margin: 0 0 10px;
+      font-size: 1.9rem;
+    }
+
+    .section p {
+      color: var(--muted);
+      max-width: 920px;
+    }
+
+    .lesson-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px;
-      position: relative;
-      z-index: 1;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
     }
-
-    .stat {
-      padding: 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 1.35rem;
-      margin-bottom: 3px;
-    }
-
-    .stat span { color: var(--muted); font-size: 0.94rem; }
-
-    .grid { display: grid; gap: 20px; }
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
     .card {
-      background: var(--panel-soft);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 22px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
     }
 
-    .card h3, .card h4 { margin-top: 0; margin-bottom: 10px; }
-    .card p, .card li { color: var(--muted); }
-
-    .section { margin: 38px 0; }
-    .section h2 {
-      font-size: 1.9rem;
-      margin-bottom: 12px;
-    }
-    .section-intro { color: var(--muted); margin-bottom: 18px; max-width: 900px; }
-
-    .module-tag, .week-tag {
+    .tag {
       display: inline-block;
-      font-size: 0.82rem;
-      color: var(--accent);
-      background: rgba(102,217,255,0.10);
-      border: 1px solid rgba(102,217,255,0.24);
       padding: 5px 10px;
       border-radius: 999px;
-      width: fit-content;
+      background: rgba(90,169,255,0.12);
+      border: 1px solid rgba(90,169,255,0.18);
+      color: var(--blue);
+      font-size: 0.82rem;
       margin-bottom: 10px;
     }
 
-    .simple-list, .resource-list {
-      margin: 0;
-      padding-left: 18px;
+    .code-block {
+      margin: 16px 0;
+      padding: 18px 18px;
+      border-radius: 14px;
+      background: #1b1d23;
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.98rem;
+      color: #f3f4f6;
+      white-space: pre-wrap;
     }
 
-    .pathway {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
+    .kw { color: #6cd4ff; font-weight: 700; }
+    .str { color: #f2cc60; }
+    .acc { color: #ff6aa9; font-weight: 700; }
+    .ok { color: var(--green); }
+
+    .exercise {
+      margin: 28px 0;
+      padding: 22px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
     }
 
-    .path-step {
-      padding: 18px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
+    .exercise h4 {
+      margin: 0 0 10px;
+      font-size: 1.75rem;
+      line-height: 1.2;
     }
 
-    .path-step strong {
+    .exercise .lead {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .result {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+
+    .inline-code {
       display: inline-block;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .download-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .download-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      padding: 15px 16px;
-      border-radius: 16px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-    }
-
-    .download-item span {
-      color: var(--text);
-      font-weight: 600;
-    }
-
-    code.inline {
-      background: rgba(255,255,255,0.08);
-      padding: 2px 8px;
+      padding: 1px 8px;
       border-radius: 8px;
-      color: #d7e2ff;
+      background: rgba(126,231,135,0.1);
+      border: 1px solid rgba(126,231,135,0.14);
+      color: var(--green);
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
     }
 
-    .footer {
-      margin-top: 42px;
-      padding: 20px 4px 10px;
+    .checklist {
+      margin: 14px 0 0;
+      padding-left: 18px;
       color: var(--muted);
-      border-top: 1px solid var(--border);
-      font-size: 0.95rem;
     }
 
-    @media (max-width: 1100px) {
-      .pathway { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .hero-stats { grid-template-columns: 1fr; }
+    .mini-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .mini-nav a {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .mini-nav a:hover {
+      text-decoration: none;
+      background: rgba(255,255,255,0.07);
     }
 
     @media (max-width: 980px) {
@@ -337,15 +296,10 @@
         position: relative;
         height: auto;
         border-right: none;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--line);
       }
-      .grid-2, .grid-3, .pathway { grid-template-columns: 1fr; }
       .content { padding: 20px; }
-      .hero { padding: 24px; }
-      .download-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      .lesson-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -353,287 +307,194 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="brand">
-        <h1>420-112<br>Création de sites web</h1>
-        <p>Site du cours • Cégep Marie-Victorin</p>
+        <div class="brand-icon">⌘</div>
+        <div>
+          <h1>Introduction à la programmation<br>Création de sites web</h1>
+        </div>
       </div>
 
-      <div class="nav-title">Navigation</div>
-      <nav class="nav-links">
-        <a href="#accueil">Accueil</a>
-        <a href="#contenu">Contenu du cours</a>
-        <a href="#html-css">Bloc HTML / CSS</a>
-        <a href="#javascript">Bloc JavaScript</a>
-        <a href="#telechargements">Téléchargements</a>
-        <a href="#organisation">Organisation des fichiers</a>
-        <a href="#infos">Informations</a>
-      </nav>
+      <input class="search" type="text" placeholder="Search..." />
 
-      <div class="nav-title">Accès rapides</div>
-      <nav class="nav-links">
-        <a href="docs/Seance_03.pptx" target="_blank">Séance 03 — HTML</a>
-        <a href="docs/Seance_04.pptx" target="_blank">Séance 04 — CSS</a>
-        <a href="docs/JS_01.pdf" target="_blank">JS 01 — Introduction</a>
-        <a href="docs/Liens.pdf" target="_blank">Exercices — Liens</a>
-      </nav>
+      <div class="menu-title">Navigation</div>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#html-css">HTML / CSS</a></li>
+        <li><a href="#liens">Liens</a></li>
+        <li><a href="#formulaires">Formulaires</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#dom">DOM</a></li>
+        <li><a href="#exercices">Exercices</a></li>
+      </ul>
+
+      <div class="menu-title">JavaScript</div>
+      <ul class="submenu">
+        <li><a href="#js-variables">Variables</a></li>
+        <li><a href="#js-conditions">Conditions</a></li>
+        <li><a href="#js-boucles">Boucles</a></li>
+        <li><a href="#js-dom">DOM</a></li>
+      </ul>
+
+      <div class="menu-title">Exercices</div>
+      <ul class="submenu">
+        <li><a href="#exo-liens" class="active-link">Série 1 — Liens</a></li>
+        <li><a href="#exo-concat">Série 2 — Concaténation</a></li>
+        <li><a href="#exo-boucles">Série 3 — Boucles</a></li>
+        <li><a href="#exo-dom">Série 4 — DOM</a></li>
+      </ul>
     </aside>
 
     <main class="content">
-      <div class="container">
-        <section class="hero" id="accueil">
-          <div class="badge">Cours 420-112 • Front-end Web</div>
-          <h2>Une page de cours moderne pour accompagner tes étudiants du HTML au DOM</h2>
-          <p>
-            Cette version met davantage en valeur la progression pédagogique du cours : fondations HTML,
-            habillage CSS, médias et formulaires, puis logique JavaScript et manipulation du DOM.
-            Le design a été renforcé pour ressembler à un vrai site de cours collégial, plus clair, plus vivant et plus professionnel.
-          </p>
-          <div class="hero-actions">
-            <a class="btn" href="#contenu">Explorer le contenu</a>
-            <a class="btn secondary" href="#telechargements">Accéder aux documents</a>
-          </div>
-          <div class="hero-stats">
-            <div class="stat">
-              <strong>2 blocs</strong>
-              <span>HTML/CSS et JavaScript</span>
-            </div>
-            <div class="stat">
-              <strong>15+ fichiers</strong>
-              <span>PDF et présentations déjà prêts</span>
-            </div>
-            <div class="stat">
-              <strong>GitHub Pages</strong>
-              <span>Publication simple et rapide</span>
-            </div>
-          </div>
-        </section>
+      <div class="breadcrumb">420-112 &gt; Notes de cours &gt; Exercices et contenu intégré</div>
 
-        <section class="section" id="contenu">
-          <h2>Vue d’ensemble du cours</h2>
-          <p class="section-intro">Le cours suit une trajectoire logique : construire la structure d’une page, l’améliorer visuellement, ajouter des éléments interactifs et finalement introduire une vraie logique de programmation côté client.</p>
-          <div class="pathway">
-            <div class="path-step">
-              <strong>01 — Structurer</strong>
-              <div>Balises HTML, texte, hiérarchie du contenu, tableaux et formulaires.</div>
-            </div>
-            <div class="path-step">
-              <strong>02 — Styliser</strong>
-              <div>CSS, polices, couleurs, marges, paddings, arrière-plans et responsive design.</div>
-            </div>
-            <div class="path-step">
-              <strong>03 — Enrichir</strong>
-              <div>Liens, audio, vidéo, navigation entre pages et expérience utilisateur.</div>
-            </div>
-            <div class="path-step">
-              <strong>04 — Programmer</strong>
-              <div>Variables, conditions, boucles, fonctions, objets et DOM en JavaScript.</div>
-            </div>
-          </div>
-          <div class="grid grid-2" style="margin-top:20px;">
-            <article class="card">
-              <span class="module-tag">Bloc 1</span>
-              <h3>HTML et CSS</h3>
-              <ul class="simple-list">
-                <li>Structure de base d’un fichier HTML</li>
-                <li>Structuration du texte</li>
-                <li>Liens hypertextes et ancres</li>
-                <li>Polices, styles et propriétés CSS</li>
-                <li>Tableaux, formulaires et médias</li>
-                <li>Couleurs, images de fond et réactivité</li>
-              </ul>
-            </article>
-            <article class="card">
-              <span class="module-tag">Bloc 2</span>
-              <h3>JavaScript</h3>
-              <ul class="simple-list">
-                <li>Introduction à JavaScript</li>
-                <li>Variables, constantes, <code class="inline">alert()</code> et <code class="inline">prompt()</code></li>
-                <li>Chaînes de caractères, fonctions mathématiques et dates</li>
-                <li>Conditions, boucles et structures de répétition</li>
-                <li>DOM, fonctions, objets et manipulation de page</li>
-              </ul>
-            </article>
-          </div>
-        </section>
+      <section class="hero" id="home">
+        <h2>Un site de cours avec le contenu directement dans la page</h2>
+        <p>
+          Cette version n’utilise plus des liens vers des PDF. Elle présente directement les notions essentielles et des exercices
+          dans un style proche de ton exemple : navigation à gauche, contenu au centre, blocs de code, résultats attendus et séries d’exercices.
+        </p>
+        <div class="notice">
+          Tu pourras continuer à ajouter d’autres chapitres exactement dans ce format : résumé, exemple, exercice, résultat attendu.
+        </div>
+        <div class="mini-nav">
+          <a href="#html-css">Commencer par HTML/CSS</a>
+          <a href="#javascript">Aller à JavaScript</a>
+          <a href="#exercices">Voir les exercices</a>
+        </div>
+      </section>
 
-        <section class="section" id="html-css">
-          <h2>Bloc HTML / CSS</h2>
-          <div class="grid grid-3">
-            <article class="card">
-              <span class="week-tag">Séance 03</span>
-              <h3>HTML — Structure de base</h3>
-              <p>Introduction à la structure d’un fichier HTML, aux balises essentielles, à la structuration du texte, aux retours de ligne, à l’emphase et aux exercices de base.</p>
-              <a href="docs/Seance_03.pptx" target="_blank">Ouvrir la présentation</a>
-            </article>
-            <article class="card">
-              <span class="week-tag">Séance 04</span>
-              <h3>CSS — Propriétés et sélecteurs</h3>
-              <p>Où écrire le code CSS, méthodes d’intégration, propriétés visuelles, largeur, bordure, marge, remplissage et premiers exercices de mise en forme.</p>
-              <a href="docs/Seance_04.pptx" target="_blank">Ouvrir la présentation</a>
-            </article>
-            <article class="card">
-              <span class="week-tag">Séance 06</span>
-              <h3>Polices et styles</h3>
-              <p>Choix des polices, styles typographiques et utilisation des outils d’inspection pour analyser les styles appliqués à une page.</p>
-              <a href="docs/Seance_06.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="week-tag">Séance 07</span>
-              <h3>Les tableaux</h3>
-              <p>Structure des tableaux HTML, cellules, rangées, colonnes et mise en forme de tableaux avec CSS.</p>
-              <a href="docs/Seance_07.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="week-tag">Séance 08</span>
-              <h3>Les liens hypertextes</h3>
-              <p>Liens internes, externes, ancres, attribut <code class="inline">target</code>, navigation entre sections et bonnes pratiques d’hyperliens.</p>
-              <a href="docs/Seance_08.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="week-tag">Séance 08-2</span>
-              <h3>Exercices sur les liens</h3>
-              <p>Exercices pratiques sur les liens externes, liens internes, liens relatifs, ancres et liens <code class="inline">mailto:</code>.</p>
-              <a href="docs/Liens.pdf" target="_blank">Voir les exercices</a>
-            </article>
-            <article class="card">
-              <span class="week-tag">Séance 09</span>
-              <h3>Couleurs et images de fond</h3>
-              <p>Utilisation des couleurs, contraste, accessibilité visuelle, arrière-plans et principes de design à éviter.</p>
-              <a href="docs/Seance_09.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="week-tag">Séance 10</span>
-              <h3>Audio et vidéo</h3>
-              <p>Utilisation des balises HTML5 <code class="inline">audio</code> et <code class="inline">video</code>, formats pris en charge et attributs importants.</p>
-              <a href="docs/Seance_10.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="week-tag">Séance 11 & 13</span>
-              <h3>Formulaires et réactivité</h3>
-              <p>Création de formulaires HTML, champs de saisie, boutons, méthodes d’envoi et conception responsive avec le viewport et les boîtes flexibles.</p>
-              <a href="docs/Seance_11.pdf" target="_blank">Formulaires</a><br>
-              <a href="docs/Seance_13.pdf" target="_blank">Réactivité</a>
-            </article>
-          </div>
-        </section>
+      <section class="section" id="html-css">
+        <h3>HTML / CSS — notions essentielles</h3>
+        <p>
+          Le cours couvre la structure d’une page HTML, les liens hypertextes, les polices, les couleurs et images de fond,
+          les formulaires, ainsi que les éléments multimédias <span class="inline-code">audio</span> et <span class="inline-code">video</span>. Les liens internes, externes et les ancres font partie des exercices proposés, de même que les formulaires et le responsive design. fileciteturn1file1L1-L18 fileciteturn1file12L11-L20 fileciteturn1file14L3-L16 fileciteturn1file19L8-L18
+        </p>
 
-        <section class="section" id="javascript">
-          <h2>Bloc JavaScript</h2>
-          <p class="section-intro">Ce bloc reprend ton matériel Développement Web II consacré à l’interactivité côté client, à la logique de programmation et à la manipulation du DOM.</p>
-          <div class="grid grid-2">
-            <article class="card">
-              <span class="module-tag">JS 01</span>
-              <h3>Introduction à JavaScript</h3>
-              <p>Origines de JavaScript, exécution côté client, lien avec ECMAScript, accès au DOM et création de pages interactives.</p>
-              <a href="docs/JS_01.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="module-tag">JS 02</span>
-              <h3>Variables et constantes</h3>
-              <p>Déclaration de variables, règles de nommage, types de données, constantes et récupération d’informations avec <code class="inline">prompt()</code>.</p>
-              <a href="docs/JS_02.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="module-tag">JS 03</span>
-              <h3>Chaînes, maths et dates</h3>
-              <p>Manipulation de chaînes de caractères, méthodes utiles, fonctions mathématiques et travail avec les dates en JavaScript.</p>
-              <a href="docs/JS_03.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="module-tag">JS 04</span>
-              <h3>Structures conditionnelles</h3>
-              <p>Utilisation de <code class="inline">if</code>, <code class="inline">if...else</code>, <code class="inline">if...else if...else</code> et <code class="inline">switch</code>.</p>
-              <a href="docs/JS_04.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="module-tag">JS 05</span>
-              <h3>Structures de répétition</h3>
-              <p>Boucles <code class="inline">for</code>, <code class="inline">for...of</code>, <code class="inline">for...in</code>, <code class="inline">while</code> et <code class="inline">do...while</code>.</p>
-              <a href="docs/JS_05.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="module-tag">JS 07</span>
-              <h3>DOM, fonctions et objets</h3>
-              <p>Comprendre le modèle DOM, les objets d’un document, les fonctions JavaScript et les premiers accès programmatiques au contenu d’une page.</p>
-              <a href="docs/JS_07.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="module-tag">JS 08</span>
-              <h3>JavaScript et le DOM</h3>
-              <p>Manipulation du contenu HTML, propriétés comme <code class="inline">innerHTML</code>, <code class="inline">textContent</code>, <code class="inline">title</code>, <code class="inline">body</code> et <code class="inline">links</code>.</p>
-              <a href="docs/JS_08.pdf" target="_blank">Voir le PDF</a>
-            </article>
-            <article class="card">
-              <span class="module-tag">Atelier</span>
-              <h3>Exercices complémentaires</h3>
-              <p>Exercices sur les hyperliens, navigation interne, liens absolus, liens relatifs et liens vers une adresse e-mail.</p>
-              <a href="docs/Liens.pdf" target="_blank">Ouvrir les exercices</a>
-            </article>
-          </div>
-        </section>
+        <div class="lesson-grid">
+          <article class="card" id="liens">
+            <div class="tag">Séance — Liens</div>
+            <h4>Liens hypertextes</h4>
+            <p>Les exercices sur les liens demandent de créer des liens relatifs, des liens absolus, des ancres internes et des liens <span class="inline-code">mailto:</span>. fileciteturn1file1L1-L18 fileciteturn1file16L51-L60</p>
+            <div class="code-block">&lt;nav&gt;
+  &lt;a href="#introduction"&gt;Introduction&lt;/a&gt;
+  &lt;a href="#services"&gt;Services&lt;/a&gt;
+  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</div>
+          </article>
 
-        <section class="section" id="telechargements">
-          <h2>Téléchargements</h2>
-          <p class="section-intro">Dépose les fichiers ci-dessous dans le dossier <code class="inline">docs/</code> de ton dépôt GitHub pour que les liens fonctionnent immédiatement.</p>
-          <div class="download-list">
-            <div class="download-item"><span>Seance_03.pptx — HTML</span><a href="docs/Seance_03.pptx" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_04.pptx — CSS</span><a href="docs/Seance_04.pptx" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_06.pdf — Polices et styles</span><a href="docs/Seance_06.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_07.pdf — Tableaux</span><a href="docs/Seance_07.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_08.pdf — Liens hypertextes</span><a href="docs/Seance_08.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_08-2.pdf — Suite / exercices</span><a href="docs/Seance_08-2.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_09.pdf — Couleurs et images de fond</span><a href="docs/Seance_09.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_09-2.pdf — Suite / couleurs</span><a href="docs/Seance_09-2.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_10.pdf — Audio et vidéo</span><a href="docs/Seance_10.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_11.pdf — Formulaires</span><a href="docs/Seance_11.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Seance_13.pdf — Réactivité</span><a href="docs/Seance_13.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>JS_01.pdf à JS_05.pdf — Bases JavaScript</span><a href="docs/JS_01.pdf" target="_blank">Commencer</a></div>
-            <div class="download-item"><span>JS_07.pdf et JS_08.pdf — DOM et interaction</span><a href="docs/JS_07.pdf" target="_blank">Ouvrir</a></div>
-            <div class="download-item"><span>Liens.pdf — Exercices sur les liens</span><a href="docs/Liens.pdf" target="_blank">Ouvrir</a></div>
-          </div>
-        </section>
+          <article class="card" id="formulaires">
+            <div class="tag">Séance — Formulaires</div>
+            <h4>Formulaires</h4>
+            <p>Le chapitre sur les formulaires insiste sur les zones de saisie, les éléments de sélection et les boutons pour permettre l’interaction entre l’internaute et le site. fileciteturn1file14L3-L16</p>
+            <div class="code-block">&lt;form&gt;
+  &lt;label for="nom"&gt;Nom&lt;/label&gt;
+  &lt;input id="nom" type="text" /&gt;
+  &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+&lt;/form&gt;</div>
+          </article>
+        </div>
+      </section>
 
-        <section class="section" id="organisation">
-          <h2>Organisation des fichiers dans GitHub</h2>
-          <div class="card">
-            <p>À la racine de ton dépôt :</p>
-            <ul class="simple-list">
-              <li><code class="inline">index.html</code></li>
-              <li><code class="inline">docs/</code></li>
-            </ul>
-            <p>Dans le dossier <code class="inline">docs/</code>, place exactement les fichiers suivants :</p>
-            <ul class="simple-list">
-              <li><code class="inline">Seance_03.pptx</code></li>
-              <li><code class="inline">Seance_04.pptx</code></li>
-              <li><code class="inline">Seance_06.pdf</code> à <code class="inline">Seance_13.pdf</code></li>
-              <li><code class="inline">JS_01.pdf</code> à <code class="inline">JS_05.pdf</code></li>
-              <li><code class="inline">JS_07.pdf</code>, <code class="inline">JS_08.pdf</code></li>
-              <li><code class="inline">Liens.pdf</code></li>
-            </ul>
-          </div>
-        </section>
+      <section class="section" id="javascript">
+        <h3>JavaScript — notions essentielles</h3>
+        <p>
+          Le bloc JavaScript introduit les variables et constantes, les opérateurs, les structures conditionnelles, les boucles,
+          puis le modèle DOM et les méthodes d’accès aux éléments HTML. Les objectifs incluent l’explication du DOM et la manipulation du contenu d’une page avec JavaScript. fileciteturn1file4L3-L20 fileciteturn1file18L3-L8 fileciteturn1file5L11-L20 fileciteturn1file15L4-L10 fileciteturn1file7L4-L16
+        </p>
 
-        <section class="section" id="infos">
-          <h2>Informations du cours</h2>
-          <div class="grid grid-3">
-            <article class="card">
-              <h3>Enseignant</h3>
-              <p>Sofiane Faidi</p>
-            </article>
-            <article class="card">
-              <h3>Cours</h3>
-              <p>420-112 — Création de sites web</p>
-            </article>
-            <article class="card">
-              <h3>Publication</h3>
-              <p>GitHub Pages avec dépôt recommandé <code class="inline">420-112</code>.</p>
-            </article>
-          </div>
-        </section>
+        <div class="lesson-grid">
+          <article class="card" id="js-variables">
+            <div class="tag">JS — Variables</div>
+            <h4>Variables et opérateurs</h4>
+            <p>Les documents présentent l’utilisation de <span class="inline-code">var</span> et <span class="inline-code">let</span>, ainsi que les opérateurs d’assignation et de comparaison. fileciteturn1file9L4-L18 fileciteturn1file4L3-L16</p>
+            <div class="code-block"><span class="kw">let</span> nomProduit <span class="acc">=</span> <span class="str">"Clavier"</span>;
+<span class="kw">let</span> quantite <span class="acc">=</span> 5;
+<span class="kw">let</span> prixUnitaire <span class="acc">=</span> 24.99;</div>
+          </article>
 
-        <footer class="footer">
-          © 2026 — 420-112 Création de sites web • Sofiane Faidi
-        </footer>
-      </div>
+          <article class="card" id="js-conditions">
+            <div class="tag">JS — Conditions</div>
+            <h4>Conditions</h4>
+            <p>La structure conditionnelle <span class="inline-code">if</span> est introduite avec l’idée qu’une accolade est toujours préférable pour rendre le code plus sûr et lisible. fileciteturn1file18L3-L8</p>
+            <div class="code-block"><span class="kw">if</span> (note &gt;= 60) {
+  message <span class="acc">=</span> <span class="str">"Réussi"</span>;
+} <span class="kw">else</span> {
+  message <span class="acc">=</span> <span class="str">"À reprendre"</span>;
+}</div>
+          </article>
+
+          <article class="card" id="js-boucles">
+            <div class="tag">JS — Boucles</div>
+            <h4>Boucles</h4>
+            <p>Le cours distingue <span class="inline-code">for</span>, <span class="inline-code">while</span>, <span class="inline-code">do...while</span>, mais aussi <span class="inline-code">for...of</span> et <span class="inline-code">for...in</span>. Il précise aussi que <span class="inline-code">do...while</span> s’exécute au moins une fois. fileciteturn1file3L5-L13 fileciteturn1file5L1-L8</p>
+            <div class="code-block"><span class="kw">for</span> (<span class="kw">let</span> i <span class="acc">=</span> 1; i &lt;= 5; i++) {
+  console.log(<span class="str">"J’aime faire de la programmation en JavaScript."</span>);
+}</div>
+          </article>
+
+          <article class="card" id="dom">
+            <div class="tag">JS — DOM</div>
+            <h4>DOM et manipulation</h4>
+            <p>Le DOM est présenté comme le modèle qui permet d’accéder aux éléments HTML pour modifier textes, styles et attributs, via des méthodes d’accès au document et des propriétés comme <span class="inline-code">innerHTML</span> et <span class="inline-code">textContent</span>. fileciteturn1file15L4-L10 fileciteturn1file7L6-L16 fileciteturn1file0L9-L16</p>
+            <div class="code-block"><span class="kw">const</span> titre <span class="acc">=</span> document.getElementById(<span class="str">"titre"</span>);
+titre.textContent <span class="acc">=</span> <span class="str">"Bienvenue dans le cours"</span>;</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="exercices">
+        <h3>Exercices intégrés dans la page</h3>
+        <p>
+          Voici des exercices affichés directement dans le site, avec le style “notes + exercice + résultat attendu”. Ils sont inspirés de tes fichiers sur les liens, les boucles et le DOM. fileciteturn1file16L1-L15 fileciteturn1file3L11-L14 fileciteturn1file17L15-L19
+        </p>
+
+        <article class="exercise" id="exo-liens">
+          <h4>🔗 Exo 1 – Liens internes avec ancres</h4>
+          <div class="lead">Crée une page HTML avec trois sections différentes : <strong>Introduction</strong>, <strong>Services</strong> et <strong>Contact</strong>. Ajoute une barre de navigation qui permet d’aller à chaque section. Cet exercice reprend les consignes de navigation interne et d’ancres du fichier sur les liens. fileciteturn1file1L1-L11 fileciteturn1file16L51-L60</div>
+          <div class="code-block">&lt;nav&gt;
+  &lt;a href="#introduction"&gt;Introduction&lt;/a&gt;
+  &lt;a href="#services"&gt;Services&lt;/a&gt;
+  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;section id="introduction"&gt;...&lt;/section&gt;
+&lt;section id="services"&gt;...&lt;/section&gt;
+&lt;section id="contact"&gt;...&lt;/section&gt;</div>
+          <div class="result">Résultat attendu : les liens du menu font défiler la page vers la bonne section.</div>
+          <ul class="checklist">
+            <li>utiliser <span class="inline-code">id</span> sur chaque section</li>
+            <li>utiliser <span class="inline-code">href="#nom-section"</span></li>
+            <li>tester chaque lien</li>
+          </ul>
+        </article>
+
+        <article class="exercise" id="exo-concat">
+          <h4>🧪 Exo 2 – Concaténation de chaînes</h4>
+          <div class="lead">Déclare les variables suivantes et affiche une phrase sur une seule ligne avec concaténation, dans le style de l’exemple que tu as montré.</div>
+          <div class="code-block"><span class="kw">let</span> nomProduit <span class="acc">=</span> <span class="str">"Clavier"</span>;
+<span class="kw">let</span> quantite <span class="acc">=</span> 5;
+<span class="kw">let</span> prixUnitaire <span class="acc">=</span> 24.99;
+
+<span class="kw">let</span> message <span class="acc">=</span> quantite + <span class="str">" "</span> + nomProduit + <span class="str">" à "</span> + prixUnitaire + <span class="str">"$ l’unité"</span>;</div>
+          <div class="result">Résultat attendu : <span class="inline-code">5 Clavier à 24.99$ l’unité</span></div>
+        </article>
+
+        <article class="exercise" id="exo-boucles">
+          <h4>🔁 Exo 3 – Répéter un message avec trois boucles</h4>
+          <div class="lead">En utilisant <span class="inline-code">for</span>, <span class="inline-code">while</span> et <span class="inline-code">do...while</span>, fais afficher cinq fois le message : <em>J’aime faire de la programmation en JavaScript.</em> Cet exercice correspond à l’activité proposée dans le chapitre sur les boucles. fileciteturn1file3L11-L14</div>
+          <div class="code-block"><span class="kw">for</span> (<span class="kw">let</span> i <span class="acc">=</span> 1; i &lt;= 5; i++) {
+  console.log(<span class="str">"J’aime faire de la programmation en JavaScript."</span>);
+}</div>
+          <div class="result">Résultat attendu : le message apparaît 5 fois.</div>
+        </article>
+
+        <article class="exercise" id="exo-dom">
+          <h4>🧩 Exo 4 – DOM et contenu d’un élément</h4>
+          <div class="lead">Réponds à une question de révision tirée du chapitre DOM : que retourne la propriété <span class="inline-code">links</span> de l’objet <span class="inline-code">document</span> ? Le document indique qu’il s’agit d’une collection de tous les liens contenus dans la page. fileciteturn1file17L15-L19</div>
+          <div class="code-block"><span class="kw">const</span> tousLesLiens <span class="acc">=</span> document.links;
+console.log(tousLesLiens.length);</div>
+          <div class="result">Réponse attendue : une collection de tous les liens présents dans la page Web. fileciteturn1file17L15-L19</div>
+        </article>
+      </section>
     </main>
   </div>
 </body>
