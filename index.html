@@ -557,61 +557,73 @@
       <section class="section searchable" id="liens-html" data-title="Liens hypertextes">
         <div class="section-header">
           <h2>Les liens hypertextes</h2>
-          <div class="chips"><span class="chip">Navigation</span><span class="chip">Ancre</span></div>
+          <div class="chips"><span class="chip">Navigation</span><span class="chip">Pages</span><span class="chip">Ancres</span></div>
         </div>
         <div class="lesson">
-          <h3>Lier les pages et les sections</h3>
-          <p>Le lien hypertexte est au cœur du Web. Il permet de relier des pages entre elles, d’ouvrir des ressources externes, d’accéder à une section d’une page ou même d’envoyer un courriel.</p>
-          <pre><code>&lt;a href="https://www.example.com" target="_blank"&gt;Visiter Example&lt;/a&gt;
-
-&lt;a href="#section1"&gt;Aller à la section 1&lt;/a&gt;
+          <h3>L’essence même du Web</h3>
+          <p>Une page Web sans liens est très limitée. Les hyperliens servent à naviguer d’une page à l’autre, à accéder à des rubriques précises d’un site et à ouvrir des ressources externes. Ils permettent d’organiser l’information sans surcharger une seule page.</p>
+          <h4>Syntaxe de base</h4>
+          <pre><code>&lt;a href="page2.html"&gt;Aller à la page 2&lt;/a&gt;</code></pre>
+          <h4>Lien externe</h4>
+          <pre><code>&lt;a href="https://www.example.com" target="_blank"&gt;Visiter Example&lt;/a&gt;</code></pre>
+          <h4>Lien interne dans la même page</h4>
+          <pre><code>&lt;a href="#section1"&gt;Aller à la section 1&lt;/a&gt;
 
 &lt;h2 id="section1"&gt;Section 1&lt;/h2&gt;
 &lt;p&gt;Contenu de la section 1.&lt;/p&gt;</code></pre>
-          <h4>Cas fréquents</h4>
-          <ul>
-            <li>Lien externe : <code>href="https://..."</code></li>
-            <li>Lien interne : <code>href="#id"</code></li>
-            <li>Courriel : <code>href="mailto:adresse@site.com"</code></li>
-          </ul>
+          <h4>Lien courriel</h4>
+          <pre><code>&lt;a href="mailto:prof@example.com"&gt;Envoyer un courriel&lt;/a&gt;</code></pre>
+          <div class="example">
+            <strong>Bon réflexe</strong>
+            Utilise un texte de lien explicite comme <em>Consulter l’horaire du cours</em> plutôt que <em>cliquez ici</em>.
+          </div>
         </div>
       </section>
 
       <section class="section searchable" id="tableaux-html" data-title="Tableaux HTML">
         <div class="section-header">
           <h2>Les tableaux</h2>
-          <div class="chips"><span class="chip">Table</span><span class="chip">thead</span><span class="chip">tbody</span></div>
+          <div class="chips"><span class="chip">table</span><span class="chip">thead</span><span class="chip">tbody</span><span class="chip">CSS</span></div>
         </div>
         <div class="lesson">
-          <h3>Présenter l’information en rangées et colonnes</h3>
-          <p>Les tableaux servent à organiser des données de manière lisible. Ils sont composés de rangées, de colonnes et de cellules. On distingue souvent l’en-tête du corps du tableau.</p>
+          <h3>Présenter des données de façon structurée</h3>
+          <p>Les tableaux sont utiles pour afficher de l’information organisée en rangées et en colonnes. Aujourd’hui, ils servent surtout à représenter des données et non à faire la mise en page générale du site.</p>
           <pre><code>&lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;Film&lt;/th&gt;
-      &lt;th&gt;Année&lt;/th&gt;
-      &lt;th&gt;Genre&lt;/th&gt;
+      &lt;th&gt;Nom de l’évaluation&lt;/th&gt;
+      &lt;th&gt;Pondération&lt;/th&gt;
+      &lt;th&gt;Date&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;Camping sauvage&lt;/td&gt;
-      &lt;td&gt;2004&lt;/td&gt;
-      &lt;td&gt;Comédie&lt;/td&gt;
+      &lt;td&gt;Laboratoire 1&lt;/td&gt;
+      &lt;td&gt;10 %&lt;/td&gt;
+      &lt;td&gt;Semaine 5&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Laboratoire 2&lt;/td&gt;
+      &lt;td&gt;10 %&lt;/td&gt;
+      &lt;td&gt;Semaine 11&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
-          <table>
-            <thead>
-              <tr><th>Balise</th><th>Rôle</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>&lt;table&gt;</td><td>Conteneur du tableau</td></tr>
-              <tr><td>&lt;tr&gt;</td><td>Rangée</td></tr>
-              <tr><td>&lt;th&gt;</td><td>Cellule d’en-tête</td></tr>
-              <tr><td>&lt;td&gt;</td><td>Cellule de données</td></tr>
-            </tbody>
-          </table>
+          <h4>Mise en forme CSS d’un tableau</h4>
+          <pre><code>table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #4a5568;
+  padding: 10px;
+}
+
+th {
+  background-color: #1f2937;
+}</code></pre>
+          <div class="note"><strong>À retenir</strong>Chaque rangée regroupe des informations liées entre elles. Les cellules d’en-tête clarifient le sens des colonnes.</div>
         </div>
       </section>
 
@@ -702,115 +714,180 @@ p {
       <section class="section searchable" id="couleurs-fonds" data-title="Couleurs et fonds">
         <div class="section-header">
           <h2>Les couleurs et les images de fond</h2>
-          <div class="chips"><span class="chip">color</span><span class="chip">background-image</span></div>
+          <div class="chips"><span class="chip">color</span><span class="chip">background-color</span><span class="chip">background-image</span></div>
         </div>
         <div class="lesson">
-          <h3>Utiliser la couleur avec cohérence</h3>
-          <p>Les couleurs améliorent l’apparence d’une page lorsqu’elles sont utilisées avec intention. Elles doivent rester lisibles, harmonieuses et adaptées au public visé.</p>
+          <h3>Choisir et appliquer les couleurs</h3>
+          <p>Les couleurs influencent la perception d’un site. Elles doivent aider la lecture, renforcer l’identité visuelle et respecter un contraste suffisant entre l’arrière-plan et le texte.</p>
+          <h4>Couleur du texte et fond</h4>
           <pre><code>body {
-  color: #f5f7ff;
-  background-color: #0f1115;
-  background-image: url('fond.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+  color: #f8fafc;
+  background-color: #0f172a;
+}
+
+h1 {
+  color: #60a5fa;
 }</code></pre>
-          <div class="example"><strong>Conseil</strong>Privilégie un contraste suffisant entre le texte et l’arrière-plan pour faciliter la lecture.</div>
+          <h4>Ajouter une image de fond</h4>
+          <pre><code>body {
+  background-image: url("images/fond.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}</code></pre>
+          <h4>Créer une carte lisible sur image</h4>
+          <pre><code>.carte {
+  background-color: rgba(0, 0, 0, 0.65);
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+}</code></pre>
+          <div class="example"><strong>Conseil</strong>Évite de multiplier trop de couleurs différentes sur une même page. Une palette restreinte donne un résultat plus professionnel.</div>
         </div>
       </section>
 
       <section class="section searchable" id="audio-video" data-title="Audio et vidéo">
         <div class="section-header">
           <h2>Audio et vidéo HTML5</h2>
-          <div class="chips"><span class="chip">audio</span><span class="chip">video</span></div>
+          <div class="chips"><span class="chip">audio</span><span class="chip">video</span><span class="chip">controls</span></div>
         </div>
         <div class="lesson">
           <h3>Intégrer du multimédia sans plugin</h3>
-          <p>HTML5 introduit les éléments <code>&lt;audio&gt;</code> et <code>&lt;video&gt;</code>, qui permettent de lire des médias directement dans le navigateur.</p>
+          <p>Avec HTML5, on peut intégrer de l’audio et de la vidéo directement dans le navigateur, sans dépendre d’anciens plugins comme Flash.</p>
+          <h4>Exemple audio</h4>
           <pre><code>&lt;audio controls&gt;
-  &lt;source src="musique.mp3" type="audio/mpeg"&gt;
-  Votre navigateur ne supporte pas l'audio.
-&lt;/audio&gt;
-
-&lt;video controls width="480"&gt;
-  &lt;source src="demo.mp4" type="video/mp4"&gt;
-  Votre navigateur ne supporte pas la vidéo.
+  &lt;source src="sons/intro.mp3" type="audio/mpeg"&gt;
+  Votre navigateur ne supporte pas l’élément audio.
+&lt;/audio&gt;</code></pre>
+          <h4>Exemple vidéo</h4>
+          <pre><code>&lt;video controls width="640" poster="images/apercu.jpg"&gt;
+  &lt;source src="videos/demo.mp4" type="video/mp4"&gt;
+  Votre navigateur ne supporte pas l’élément vidéo.
 &lt;/video&gt;</code></pre>
-          <div class="note"><strong>À surveiller</strong>Tous les navigateurs ne gèrent pas exactement les mêmes formats. Il est souvent utile de prévoir plusieurs sources.</div>
+          <h4>Attributs utiles</h4>
+          <ul>
+            <li><code>controls</code> : affiche les boutons de lecture.</li>
+            <li><code>autoplay</code> : démarre automatiquement.</li>
+            <li><code>loop</code> : relance la lecture.</li>
+            <li><code>muted</code> : coupe le son.</li>
+            <li><code>poster</code> : image affichée avant la lecture d’une vidéo.</li>
+          </ul>
+          <div class="note"><strong>Remarque</strong>Il est souvent préférable de fournir des médias compressés pour réduire le temps de chargement.</div>
         </div>
       </section>
 
       <section class="section searchable" id="formulaires" data-title="Formulaires">
         <div class="section-header">
           <h2>Les formulaires</h2>
-          <div class="chips"><span class="chip">form</span><span class="chip">input</span><span class="chip">button</span></div>
+          <div class="chips"><span class="chip">form</span><span class="chip">input</span><span class="chip">select</span><span class="chip">textarea</span></div>
         </div>
         <div class="lesson">
-          <h3>Interaction utilisateur</h3>
-          <p>Les formulaires servent à recueillir de l’information : texte, choix, courriels, messages, options uniques ou multiples. Le formulaire est défini par l’élément <code>&lt;form&gt;</code>.</p>
-          <pre><code>&lt;form action="traitement.php" method="post"&gt;
+          <h3>Créer une zone d’interaction</h3>
+          <p>Les formulaires permettent à l’utilisateur de transmettre des informations : texte, choix simples, choix multiples ou messages. Ils constituent un point central d’interaction entre l’utilisateur et le site.</p>
+          <h4>Structure générale</h4>
+          <pre><code>&lt;form action="traitement.php" method="post" name="contact"&gt;
   &lt;label for="nom"&gt;Nom&lt;/label&gt;
   &lt;input id="nom" name="nom" type="text" required&gt;
 
   &lt;label for="email"&gt;Courriel&lt;/label&gt;
   &lt;input id="email" name="email" type="email"&gt;
 
+  &lt;label for="programme"&gt;Programme&lt;/label&gt;
+  &lt;select id="programme" name="programme"&gt;
+    &lt;option&gt;Informatique&lt;/option&gt;
+    &lt;option&gt;Réseautique&lt;/option&gt;
+  &lt;/select&gt;
+
   &lt;label for="message"&gt;Message&lt;/label&gt;
-  &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+  &lt;textarea id="message" name="message" rows="5"&gt;&lt;/textarea&gt;
 
   &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
 &lt;/form&gt;</code></pre>
-          <h4>Attributs à connaître</h4>
+          <h4>Types de contrôles fréquents</h4>
           <ul>
-            <li><code>action</code> : destination des données</li>
-            <li><code>method</code> : <code>get</code> ou <code>post</code></li>
-            <li><code>name</code> : identifie le champ</li>
-            <li><code>required</code> : champ obligatoire</li>
+            <li><code>type="text"</code> : texte simple</li>
+            <li><code>type="email"</code> : adresse courriel</li>
+            <li><code>type="password"</code> : mot de passe</li>
+            <li><code>type="radio"</code> : choix unique</li>
+            <li><code>type="checkbox"</code> : choix multiple</li>
+            <li><code>&lt;select&gt;</code> : liste déroulante</li>
+            <li><code>&lt;textarea&gt;</code> : texte long</li>
           </ul>
+          <h4>Exemple CSS pour styliser un formulaire</h4>
+          <pre><code>form {
+  max-width: 600px;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+}</code></pre>
         </div>
       </section>
 
       <section class="section searchable" id="reactivite" data-title="Réactivité responsive">
         <div class="section-header">
           <h2>Réactivité</h2>
-          <div class="chips"><span class="chip">Responsive</span><span class="chip">Viewport</span></div>
+          <div class="chips"><span class="chip">Responsive</span><span class="chip">Viewport</span><span class="chip">Flex</span></div>
         </div>
         <div class="lesson">
-          <h3>Concevoir une page qui s’adapte</h3>
-          <p>Un site réactif s’adapte aux téléphones, tablettes et écrans d’ordinateur. La balise viewport aide le navigateur à dimensionner correctement la page sur mobile.</p>
+          <h3>Adapter le site aux différents écrans</h3>
+          <p>Un site réactif offre une consultation confortable sur ordinateur, tablette et téléphone. Cela passe par la balise viewport, des largeurs souples et des techniques de mise en page comme Flexbox.</p>
+          <h4>Balise viewport</h4>
           <pre><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
-          <pre><code>.cartes {
+          <h4>Disposition flexible</h4>
+          <pre><code>.conteneur {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
 
-.carte {
+.bloc {
   flex: 1 1 280px;
+  padding: 20px;
+  background-color: #1e293b;
 }</code></pre>
-          <div class="exercise"><strong>Exercice</strong>Crée trois cartes alignées sur grand écran et empilées sur téléphone.</div>
+          <h4>Media query</h4>
+          <pre><code>@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+  }
+
+  .contenu {
+    padding: 12px;
+  }
+}</code></pre>
+          <div class="exercise"><strong>Exercice</strong>Crée une grille de cartes qui s’affiche sur trois colonnes à l’ordinateur et une seule colonne sur téléphone.</div>
         </div>
       </section>
 
       <section class="section searchable" id="js-intro" data-title="Introduction à JavaScript">
         <div class="section-header">
           <h2>Introduction à JavaScript</h2>
-          <div class="chips"><span class="chip">Script</span><span class="chip">Interactivité</span></div>
+          <div class="chips"><span class="chip">Script</span><span class="chip">Client</span><span class="chip">DOM</span></div>
         </div>
         <div class="lesson">
-          <h3>Pourquoi JavaScript ?</h3>
-          <p>JavaScript est un langage de programmation qui permet de rendre une page Web interactive. Il peut afficher des messages, réagir à des événements, manipuler des formulaires et modifier le contenu HTML via le DOM.</p>
+          <h3>Le langage de l’interactivité</h3>
+          <p>JavaScript est principalement utilisé côté client pour rendre les pages Web interactives. Il peut accéder aux objets du DOM, traiter les formulaires, afficher des messages et réagir aux événements déclenchés par l’utilisateur.</p>
+          <h4>Premiers essais</h4>
           <pre><code>&lt;script&gt;
-  alert("Bonjour et bienvenue !");
+  alert("Bonjour !");
+  console.log("Le script est bien exécuté.");
 &lt;/script&gt;</code></pre>
-          <div class="mini-card">
-            <h4>Quelques usages</h4>
-            <ul>
-              <li>Validation de formulaires</li>
-              <li>Modification dynamique du texte</li>
-              <li>Animations et interactions</li>
-              <li>Traitement des entrées utilisateur</li>
-            </ul>
-          </div>
+          <h4>Où écrire le JavaScript ?</h4>
+          <ul>
+            <li>Directement dans une balise <code>&lt;script&gt;</code> dans la page HTML.</li>
+            <li>Dans un fichier externe comme <code>script.js</code>.</li>
+          </ul>
+          <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
         </div>
       </section>
 
@@ -883,57 +960,78 @@ console.log(maintenant.getDay());</code></pre>
       <section class="section searchable" id="conditions-js" data-title="Structures conditionnelles">
         <div class="section-header">
           <h2>Structures de contrôle conditionnelles</h2>
-          <div class="chips"><span class="chip">if</span><span class="chip">else</span><span class="chip">switch</span></div>
+          <div class="chips"><span class="chip">if</span><span class="chip">else if</span><span class="chip">switch</span></div>
         </div>
         <div class="lesson">
-          <h3>Prendre des décisions</h3>
-          <p>Une structure conditionnelle exécute un bloc de code selon une condition logique.</p>
+          <h3>Décider selon une condition</h3>
+          <p>Une condition permet d’exécuter un bloc de code seulement si un test logique est vrai. JavaScript propose plusieurs formes : <code>if</code>, <code>if ... else</code>, <code>if ... else if ... else</code> et <code>switch</code>.</p>
+          <h4>Structure if</h4>
+          <pre><code>let temperature = 28;
+
+if (temperature &gt; 25) {
+  console.log("Il fait chaud.");
+}</code></pre>
+          <h4>Structure if ... else if ... else</h4>
           <pre><code>let note = 78;
 
-if (note >= 60) {
+if (note &gt;= 90) {
+  console.log("Excellent");
+} else if (note &gt;= 60) {
   console.log("Réussi");
 } else {
   console.log("Échec");
 }</code></pre>
-          <pre><code>let jour = 3;
+          <h4>Structure switch</h4>
+          <pre><code>let choix = "A";
 
-switch (jour) {
-  case 1:
-    console.log("Lundi");
+switch (choix) {
+  case "A":
+    console.log("Option A");
     break;
-  case 2:
-    console.log("Mardi");
-    break;
-  case 3:
-    console.log("Mercredi");
+  case "B":
+    console.log("Option B");
     break;
   default:
-    console.log("Autre jour");
+    console.log("Option inconnue");
 }</code></pre>
-          <div class="exercise"><strong>Exercice</strong>Écris un script qui affiche “majeur” si l’âge entré par l’utilisateur est supérieur ou égal à 18, sinon “mineur”.</div>
         </div>
       </section>
 
       <section class="section searchable" id="boucles-js" data-title="Structures de répétition">
         <div class="section-header">
           <h2>Structures de répétition</h2>
-          <div class="chips"><span class="chip">for</span><span class="chip">while</span><span class="chip">for...of</span></div>
+          <div class="chips"><span class="chip">for</span><span class="chip">while</span><span class="chip">do...while</span><span class="chip">for...in</span></div>
         </div>
         <div class="lesson">
-          <h3>Répéter des instructions</h3>
+          <h3>Exécuter plusieurs fois un bloc de code</h3>
+          <p>Les boucles servent à répéter des instructions tant qu’une condition est vraie ou pendant un nombre déterminé d’itérations.</p>
+          <h4>Boucle for</h4>
           <pre><code>for (let i = 1; i &lt;= 5; i++) {
-  console.log("Bonjour " + i);
+  console.log("Bienvenue dans le cours Développement Web II");
 }</code></pre>
+          <h4>Boucle while</h4>
           <pre><code>let compteur = 0;
 while (compteur &lt; 3) {
   console.log("Compteur : " + compteur);
   compteur++;
 }</code></pre>
-          <pre><code>let couleurs = ["rouge", "vert", "bleu"];
-for (let couleur of couleurs) {
-  console.log(couleur);
+          <h4>Boucle do...while</h4>
+          <pre><code>let nombre = 0;
+do {
+  console.log("Valeur : " + nombre);
+  nombre++;
+} while (nombre &lt; 2);</code></pre>
+          <h4>Parcourir un tableau</h4>
+          <pre><code>let technologies = ["HTML", "CSS", "JavaScript"];
+
+for (let techno of technologies) {
+  console.log(techno);
 }</code></pre>
-          <div class="note"><strong>À retenir</strong>La boucle <code>for</code> convient bien quand on connaît le nombre de répétitions à l’avance.</div>
+          <pre><code>let etudiant = { nom: "Ali", session: 1, groupe: "A" };
+
+for (let cle in etudiant) {
+  console.log(cle + " : " + etudiant[cle]);
+}</code></pre>
         </div>
       </section>
 
@@ -1029,19 +1127,27 @@ document.getElementById("btn").addEventListener("click", function () {
       <section class="section searchable" id="mini-projets" data-title="Mini projets">
         <div class="section-header">
           <h2>Mini-projets</h2>
-          <div class="chips"><span class="chip">Projet</span><span class="chip">Intégration</span></div>
+          <div class="chips"><span class="chip">Projet</span><span class="chip">HTML/CSS/JS</span><span class="chip">Intégration</span></div>
         </div>
         <div class="lesson">
           <h3>Projet 1 — Portfolio étudiant</h3>
-          <p>Une page personnelle avec photo, biographie, compétences, projets et liens de contact.</p>
+          <p>Créer une page personnelle avec photo, description, compétences, projets et section contact.</p>
+          <ul>
+            <li>HTML : structure de la page</li>
+            <li>CSS : couleurs, polices, sections, cartes</li>
+            <li>JavaScript : bouton pour afficher/masquer des projets</li>
+          </ul>
           <h3>Projet 2 — Page de restaurant</h3>
-          <p>Utilise HTML pour la structure, CSS pour le style et JavaScript pour un menu interactif ou une réservation simple.</p>
+          <p>Construire un site vitrine avec menu, galerie, formulaire de réservation et section avis.</p>
           <h3>Projet 3 — Quiz interactif</h3>
-          <p>Créer un quiz avec plusieurs questions, un bouton “Vérifier” et un score final affiché par JavaScript.</p>
+          <p>Créer un quiz où l’utilisateur répond à plusieurs questions puis voit son score final.</p>
           <pre><code>const questions = [
   { question: "HTML signifie ?", reponse: "HyperText Markup Language" },
-  { question: "CSS sert à ?", reponse: "Mettre en forme" }
+  { question: "CSS sert à ?", reponse: "Mettre en forme" },
+  { question: "JavaScript sert à ?", reponse: "Rendre le site interactif" }
 ];</code></pre>
+          <h3>Projet 4 — Formulaire validé par JavaScript</h3>
+          <p>Ajouter une vérification simple avant l’envoi : nom obligatoire, courriel valide, message non vide.</p>
         </div>
       </section>
 
@@ -1065,7 +1171,8 @@ document.getElementById("btn").addEventListener("click", function () {
       </section>
 
       <footer class="footer">
-        Site de cours 420-112 — Création de sites Web · version documentation monofichier.
+        <p><strong>Site de cours 420-112 — Création de sites Web</strong></p>
+        <p>Cette page regroupe les notions fondamentales vues en HTML, CSS et JavaScript dans un format documentation monofichier, pratique pour GitHub Pages et pour la révision des étudiants.</p>
       </footer>
     </div>
   </main>
