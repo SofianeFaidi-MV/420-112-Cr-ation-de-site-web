@@ -7,170 +7,223 @@
 <style>
 
 body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    display:flex;
-    background:#1e1e1e;
-    color:white;
+margin:0;
+font-family:Arial;
+display:flex;
+background:#1e1e1e;
+color:white;
 }
 
-/* SIDEBAR */
-
 .sidebar{
-    width:260px;
-    background:#111;
-    height:100vh;
-    overflow:auto;
-    padding:20px;
+width:260px;
+background:#111;
+height:100vh;
+overflow:auto;
+padding:20px;
 }
 
 .sidebar h2{
-    font-size:18px;
+font-size:20px;
+margin-bottom:20px;
 }
 
 .sidebar a{
-    display:block;
-    color:#ccc;
-    padding:8px;
-    text-decoration:none;
+display:block;
+color:#ccc;
+padding:8px;
+text-decoration:none;
 }
 
 .sidebar a:hover{
-    background:#333;
+background:#333;
 }
 
-/* CONTENU */
-
 .content{
-    flex:1;
-    padding:40px;
+flex:1;
+padding:40px;
+max-width:900px;
 }
 
 h1{
-    font-size:40px;
-    border-bottom:1px solid #444;
-    padding-bottom:10px;
+font-size:42px;
+border-bottom:1px solid #444;
+padding-bottom:10px;
 }
 
 section{
-    margin-top:40px;
-}
-
-code{
-    background:#333;
-    padding:4px;
+margin-top:50px;
 }
 
 pre{
-    background:#111;
-    padding:15px;
-    overflow:auto;
+background:#111;
+padding:15px;
+overflow:auto;
+border-left:4px solid #4CAF50;
+}
+
+code{
+color:#4CAF50;
 }
 
 </style>
 </head>
 
-
 <body>
 
 <div class="sidebar">
 
-<h2>420-112</h2>
+<h2>Création Web</h2>
 
-<a href="#intro">Introduction</a>
 <a href="#html">HTML</a>
 <a href="#css">CSS</a>
 <a href="#javascript">JavaScript</a>
-<a href="#exercices">Exercices</a>
+<a href="#variables">Variables JS</a>
+<a href="#conditions">Conditions</a>
+<a href="#boucles">Boucles</a>
+<a href="#dom">DOM</a>
+<a href="#formulaires">Formulaires</a>
 
 </div>
 
-
 <div class="content">
 
-<h1>Création de sites Web</h1>
-
-<section id="intro">
-
-<h2>Introduction</h2>
-
-<p>
-Dans ce cours nous allons apprendre à créer des sites web modernes en utilisant :
-</p>
-
-<ul>
-<li>HTML</li>
-<li>CSS</li>
-<li>JavaScript</li>
-</ul>
-
-</section>
-
+<h1>Introduction à la programmation Web</h1>
 
 <section id="html">
 
-<h2>HTML</h2>
+<h2>Structure de base HTML</h2>
 
 <p>
-HTML permet de structurer une page web.
+HTML sert à créer la structure d’une page Web.
 </p>
 
 <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Ma page&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
 &lt;h1&gt;Bonjour&lt;/h1&gt;
 &lt;p&gt;Bienvenue sur mon site&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
 </pre>
 
 </section>
 
-
 <section id="css">
 
-<h2>CSS</h2>
+<h2>Introduction au CSS</h2>
 
 <p>
-CSS permet de styliser une page web.
+CSS permet de styliser une page Web en ajoutant couleurs, polices et mise en page.
 </p>
 
 <pre>
 body {
-  background: black;
-  color: white;
+background:black;
+color:white;
+font-family:Arial;
 }
 </pre>
 
 </section>
-
 
 <section id="javascript">
 
-<h2>JavaScript</h2>
+<h2>Introduction à JavaScript</h2>
 
 <p>
-JavaScript permet d'ajouter de l'interactivité.
+JavaScript est un langage de programmation permettant de rendre une page Web interactive et de manipuler les éléments HTML grâce au DOM. :contentReference[oaicite:1]{index=1}
 </p>
 
 <pre>
-function direBonjour(){
-  alert("Bonjour !");
+alert("Bonjour !");
+</pre>
+
+</section>
+
+<section id="variables">
+
+<h2>Variables JavaScript</h2>
+
+<p>
+Les variables servent à stocker des données.
+</p>
+
+<pre>
+let nom = "Jean";
+const age = 20;
+
+console.log(nom);
+</pre>
+
+</section>
+
+<section id="conditions">
+
+<h2>Structures conditionnelles</h2>
+
+<pre>
+let note = 85;
+
+if(note >= 60){
+console.log("Réussi");
+}else{
+console.log("Échec");
 }
 </pre>
 
 </section>
 
+<section id="boucles">
 
-<section id="exercices">
+<h2>Boucles</h2>
 
-<h2>Exercices</h2>
+<pre>
+for(let i=0;i<5;i++){
+console.log("Bonjour");
+}
+</pre>
 
-<h3>Exercice 1</h3>
+</section>
 
-Créer une page HTML contenant :
+<section id="dom">
 
-<ul>
-<li>un titre</li>
-<li>un paragraphe</li>
-<li>une image</li>
-</ul>
+<h2>Manipulation du DOM</h2>
+
+<p>
+Le DOM représente la page HTML comme un arbre d’objets manipulables par JavaScript. :contentReference[oaicite:2]{index=2}
+</p>
+
+<pre>
+document.getElementById("titre").innerHTML = "Nouveau titre";
+</pre>
+
+</section>
+
+<section id="formulaires">
+
+<h2>Formulaires HTML</h2>
+
+<p>
+Les formulaires permettent aux utilisateurs d’envoyer des informations à un site Web. :contentReference[oaicite:3]{index=3}
+</p>
+
+<pre>
+<form>
+
+<label>Nom</label>
+<input type="text">
+
+<button>Envoyer</button>
+
+</form>
+</pre>
 
 </section>
 
