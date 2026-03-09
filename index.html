@@ -307,570 +307,9 @@
   <div class="layout">
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-icon">⌘</div>
+        <div class="brand-icon">JS</div>
         <div>
-          <h1>420-112<br>Création de sites web</h1>
-        </div>
-      </div>
-
-      <input class="search" type="text" placeholder="Search..." />
-
-      <div class="menu-title">Chapitres</div>
-      <ul class="menu">
-        <li><a href="#home">Accueil</a></li>
-        <li><a href="#chapitre1">Chapitre 1 — HTML</a></li>
-        <li><a href="#chapitre2">Chapitre 2 — CSS</a></li>
-        <li><a href="#chapitre3">Chapitre 3 — Liens</a></li>
-        <li><a href="#chapitre4">Chapitre 4 — Tableaux</a></li>
-        <li><a href="#chapitre5">Chapitre 5 — Formulaires</a></li>
-        <li><a href="#chapitre6">Chapitre 6 — JavaScript</a></li>
-        <li><a href="#chapitre7">Chapitre 7 — DOM</a></li>
-        <li><a href="#chapitre8">Chapitre 8 — Exercices</a></li>
-      </ul>
-
-      <div class="menu-title">Exercices</div>
-      <ul class="submenu">
-        <li><a href="#exo-html">Exercice HTML</a></li>
-        <li><a href="#exo-liens">Exercice Liens</a></li>
-        <li><a href="#exo-tableaux">Exercice Tableaux</a></li>
-        <li><a href="#exo-formulaires">Exercice Formulaires</a></li>
-        <li><a href="#exo-concat">Exercice Concaténation</a></li>
-        <li><a href="#exo-boucles">Exercice Boucles</a></li>
-        <li><a href="#exo-dom">Exercice DOM</a></li>
-      </ul>
-    </aside>
-
-    <main class="content">
-      <div class="breadcrumb">420-112 &gt; Notes de cours &gt; Site structuré par chapitres</div>
-
-      <section class="hero" id="home">
-        <h2>Site du cours structuré par chapitres</h2>
-        <p>
-          Cette version organise maintenant tout le contenu sous forme de chapitres complets.
-          Chaque chapitre contient un résumé, un exemple et un exercice. Le site ressemble ainsi davantage
-          à une vraie plateforme de cours pour les étudiants.
-        </p>
-        <div class="notice">
-          Tu peux continuer à enrichir chaque chapitre en ajoutant d’autres exemples, démonstrations, captures d’écran et séries d’exercices.
-        </div>
-        <div class="mini-nav">
-          <a href="#chapitre1">Commencer par HTML</a>
-          <a href="#chapitre6">Aller à JavaScript</a>
-          <a href="#chapitre8">Voir les exercices</a>
-        </div>
-      </section>
-
-      <section class="section" id="chapitre1">
-        <h3>Chapitre 1 — Introduction à HTML</h3>
-        <p>HTML sert à structurer le contenu d’une page Web. On y place les titres, paragraphes, listes, images et différentes sections du document.</p>
-        <div class="lesson-grid">
-          <article class="card">
-            <div class="tag">Notion</div>
-            <h4>Structure de base</h4>
-            <div class="code-block">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset="UTF-8" /&gt;
-  &lt;title&gt;Ma page&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;Bonjour&lt;/h1&gt;
-&lt;/body&gt;
-&lt;/html&gt;</div>
-          </article>
-          <article class="card" id="exo-html">
-            <div class="tag">Exercice</div>
-            <h4>Créer une première page</h4>
-            <p>Crée une page avec un titre principal, un paragraphe de présentation et une liste de trois éléments.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="chapitre2">
-        <h3>Chapitre 2 — Introduction à CSS</h3>
-        <p>CSS permet de styliser les pages Web : couleurs, polices, marges, bordures, disposition et adaptation sur différents écrans.</p>
-        <div class="lesson-grid">
-          <article class="card">
-            <div class="tag">Notion</div>
-            <h4>Exemple de style</h4>
-            <div class="code-block">body {
-  font-family: Arial, sans-serif;
-  background-color: #0f172a;
-  color: white;
-}
-
-h1 {
-  color: #5aa9ff;
-}</div>
-          </article>
-          <article class="card">
-            <div class="tag">À retenir</div>
-            <h4>Propriétés utiles</h4>
-            <ul class="checklist">
-              <li><span class="inline-code">color</span></li>
-              <li><span class="inline-code">background-color</span></li>
-              <li><span class="inline-code">margin</span></li>
-              <li><span class="inline-code">padding</span></li>
-              <li><span class="inline-code">border</span></li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="chapitre3">
-        <h3>Chapitre 3 — Les liens hypertextes</h3>
-        <p>Les liens permettent de naviguer entre différentes pages, vers des sites externes, ou encore à l’intérieur d’une même page à l’aide d’ancres.</p>
-        <div class="lesson-grid">
-          <article class="card">
-            <div class="tag">Exemple</div>
-            <h4>Liens absolus et ancres</h4>
-            <div class="code-block">&lt;a href="https://example.com"&gt;Site externe&lt;/a&gt;
-&lt;a href="#contact"&gt;Aller au contact&lt;/a&gt;</div>
-          </article>
-          <article class="card" id="exo-liens">
-            <div class="tag">Exercice</div>
-            <h4>Navigation interne</h4>
-            <p>Crée trois sections et un menu qui permet d’aller directement à chacune d’elles.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="chapitre4">
-        <h3>Chapitre 4 — Les tableaux</h3>
-        <p>Les tableaux servent à présenter des données organisées en lignes et colonnes.</p>
-        <div class="lesson-grid">
-          <article class="card">
-            <div class="tag">Exemple</div>
-            <h4>Structure d’un tableau</h4>
-            <div class="code-block">&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Nom&lt;/th&gt;
-    &lt;th&gt;Note&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Adam&lt;/td&gt;
-    &lt;td&gt;88&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</div>
-          </article>
-          <article class="card" id="exo-tableaux">
-            <div class="tag">Exercice</div>
-            <h4>Tableau de résultats</h4>
-            <p>Construit un tableau avec trois étudiants et leur note finale.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="chapitre5">
-        <h3>Chapitre 5 — Les formulaires</h3>
-        <p>Les formulaires permettent de recueillir des informations auprès de l’utilisateur grâce à des champs de saisie et des contrôles d’interface.</p>
-        <div class="lesson-grid">
-          <article class="card">
-            <div class="tag">Exemple</div>
-            <h4>Formulaire simple</h4>
-            <div class="code-block">&lt;form&gt;
-  &lt;label for="nom"&gt;Nom&lt;/label&gt;
-  &lt;input id="nom" type="text" /&gt;
-
-  &lt;label for="courriel"&gt;Courriel&lt;/label&gt;
-  &lt;input id="courriel" type="email" /&gt;
-
-  &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
-&lt;/form&gt;</div>
-          </article>
-          <article class="card" id="exo-formulaires">
-            <div class="tag">Exercice</div>
-            <h4>Formulaire de contact</h4>
-            <p>Crée un formulaire avec un nom, un courriel et un bouton d’envoi.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="chapitre6">
-        <h3>Chapitre 6 — Introduction à JavaScript</h3>
-        <p>JavaScript rend les pages interactives. On peut y déclarer des variables, manipuler des chaînes, faire des calculs, tester des conditions et répéter des actions.</p>
-        <div class="lesson-grid">
-          <article class="card">
-            <div class="tag">Variables</div>
-            <h4>Déclaration</h4>
-            <div class="code-block"><span class="kw">let</span> nomProduit <span class="acc">=</span> <span class="str">"Clavier"</span>;
-<span class="kw">let</span> quantite <span class="acc">=</span> 5;
-<span class="kw">let</span> prixUnitaire <span class="acc">=</span> 24.99;</div>
-          </article>
-          <article class="card" id="exo-concat">
-            <div class="tag">Exercice</div>
-            <h4>Concaténation</h4>
-            <div class="code-block"><span class="kw">let</span> message <span class="acc">=</span> quantite + <span class="str">" "</span> + nomProduit + <span class="str">" à "</span> + prixUnitaire + <span class="str">"$ l’unité"</span>;</div>
-            <div class="result">Résultat attendu : <span class="inline-code">5 Clavier à 24.99$ l’unité</span></div>
-          </article>
-        </div>
-
-        <div class="lesson-grid" style="margin-top:18px;">
-          <article class="card">
-            <div class="tag">Conditions</div>
-            <h4>if / else</h4>
-            <div class="code-block"><span class="kw">if</span> (note &gt;= 60) {
-  message <span class="acc">=</span> <span class="str">"Réussi"</span>;
-} <span class="kw">else</span> {
-  message <span class="acc">=</span> <span class="str">"À reprendre"</span>;
-}</div>
-          </article>
-          <article class="card" id="exo-boucles">
-            <div class="tag">Boucles</div>
-            <h4>for</h4>
-            <div class="code-block"><span class="kw">for</span> (<span class="kw">let</span> i <span class="acc">=</span> 1; i &lt;= 5; i++) {
-  console.log(<span class="str">"J’aime faire de la programmation en JavaScript."</span>);
-}</div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="chapitre7">
-        <h3>Chapitre 7 — Le DOM</h3>
-        <p>Le DOM permet d’accéder aux éléments HTML avec JavaScript et de modifier leur contenu, leurs styles ou leurs attributs.</p>
-        <div class="lesson-grid">
-          <article class="card">
-            <div class="tag">Exemple</div>
-            <h4>Modifier un titre</h4>
-            <div class="code-block">&lt;h1 id="titre"&gt;Ancien titre&lt;/h1&gt;
-
-&lt;script&gt;
-const titre = document.getElementById("titre");
-titre.textContent = "Bienvenue dans le cours";
-&lt;/script&gt;</div>
-          </article>
-          <article class="card" id="exo-dom">
-            <div class="tag">Exercice</div>
-            <h4>Manipulation DOM</h4>
-            <p>Sélectionne un élément de la page et remplace son texte avec <span class="inline-code">textContent</span>.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section" id="chapitre8">
-        <h3>Chapitre 8 — Banque d’exercices</h3>
-        <p>Cette section regroupe des exercices simples à réaliser en classe ou à la maison pour consolider les notions vues dans les chapitres précédents.</p>
-
-        <article class="exercise">
-          <h4>Exercice 1 — Page personnelle</h4>
-          <div class="lead">Créer une page personnelle avec un titre, un paragraphe et une liste de centres d’intérêt.</div>
-        </article>
-
-        <article class="exercise">
-          <h4>Exercice 2 — Menu de navigation</h4>
-          <div class="lead">Créer un menu avec trois liens internes et trois sections correspondantes.</div>
-        </article>
-
-        <article class="exercise">
-          <h4>Exercice 3 — Tableau de notes</h4>
-          <div class="lead">Construire un tableau propre avec des en-têtes et des cellules de données.</div>
-        </article>
-
-        <article class="exercise">
-          <h4>Exercice 4 — Formulaire complet</h4>
-          <div class="lead">Créer un formulaire avec nom, courriel, mot de passe et bouton d’envoi.</div>
-        </article>
-
-        <article class="exercise">
-          <h4>Exercice 5 — Message concaténé</h4>
-          <div class="lead">Déclarer des variables et afficher une phrase complète en concaténant des chaînes.</div>
-        </article>
-
-        <article class="exercise">
-          <h4>Exercice 6 — Conditions</h4>
-          <div class="lead">Afficher “Réussi” ou “Échec” selon une note entrée par l’utilisateur.</div>
-        </article>
-
-        <article class="exercise">
-          <h4>Exercice 7 — Boucles</h4>
-          <div class="lead">Afficher plusieurs fois un message à l’aide d’une boucle <span class="inline-code">for</span>.</div>
-        </article>
-
-        <article class="exercise">
-          <h4>Exercice 8 — DOM</h4>
-          <div class="lead">Modifier le contenu d’un élément HTML après un clic sur un bouton.</div>
-        </article>
-      </section>
-    </main>
-  </div>
-</body>
-</html>
-    .layout {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      min-height: 100vh;
-    }
-
-    .sidebar {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      overflow-y: auto;
-      background: rgba(13, 18, 29, 0.96);
-      border-right: 1px solid var(--line);
-      padding: 24px 18px;
-    }
-
-    .brand {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-      margin-bottom: 18px;
-      padding-bottom: 18px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, rgba(90,169,255,0.25), rgba(126,231,135,0.15));
-      color: var(--blue);
-      font-weight: 800;
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    .brand h1 {
-      margin: 0;
-      font-size: 1.05rem;
-      line-height: 1.35;
-      font-weight: 700;
-    }
-
-    .search {
-      width: 100%;
-      margin: 14px 0 22px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,0.03);
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .menu-title {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-size: 0.75rem;
-      margin: 18px 0 10px;
-    }
-
-    .menu, .submenu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .menu li a, .submenu li a {
-      display: block;
-      padding: 10px 12px;
-      border-radius: 12px;
-      color: var(--text);
-      transition: 0.2s ease;
-    }
-
-    .menu li a:hover, .submenu li a:hover {
-      background: rgba(255,255,255,0.05);
-      text-decoration: none;
-    }
-
-    .submenu {
-      margin-left: 16px;
-      border-left: 1px solid rgba(255,255,255,0.08);
-      padding-left: 10px;
-    }
-
-    .active-link {
-      background: rgba(90,169,255,0.12);
-      border: 1px solid rgba(90,169,255,0.18);
-    }
-
-    .content {
-      padding: 28px 36px 50px;
-      max-width: 1180px;
-    }
-
-    .breadcrumb {
-      color: var(--muted);
-      font-size: 0.95rem;
-      margin-bottom: 18px;
-    }
-
-    .hero {
-      padding: 26px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, rgba(90,169,255,0.12), rgba(126,231,135,0.06));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      margin-bottom: 28px;
-    }
-
-    .hero h2 {
-      margin: 0 0 10px;
-      font-size: 2rem;
-      line-height: 1.15;
-    }
-
-    .hero p {
-      margin: 0;
-      color: var(--muted);
-      max-width: 820px;
-    }
-
-    .notice {
-      margin-top: 16px;
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-      color: var(--muted);
-    }
-
-    .section {
-      margin: 36px 0;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .section h3 {
-      margin: 0 0 10px;
-      font-size: 1.9rem;
-    }
-
-    .section p {
-      color: var(--muted);
-      max-width: 920px;
-    }
-
-    .lesson-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 5px 10px;
-      border-radius: 999px;
-      background: rgba(90,169,255,0.12);
-      border: 1px solid rgba(90,169,255,0.18);
-      color: var(--blue);
-      font-size: 0.82rem;
-      margin-bottom: 10px;
-    }
-
-    .code-block {
-      margin: 16px 0;
-      padding: 18px 18px;
-      border-radius: 14px;
-      background: #1b1d23;
-      border: 1px solid rgba(255,255,255,0.08);
-      overflow-x: auto;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 0.98rem;
-      color: #f3f4f6;
-      white-space: pre-wrap;
-    }
-
-    .kw { color: #6cd4ff; font-weight: 700; }
-    .str { color: #f2cc60; }
-    .acc { color: #ff6aa9; font-weight: 700; }
-    .ok { color: var(--green); }
-
-    .exercise {
-      margin: 28px 0;
-      padding: 22px;
-      border-radius: 20px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-
-    .exercise h4 {
-      margin: 0 0 10px;
-      font-size: 1.75rem;
-      line-height: 1.2;
-    }
-
-    .exercise .lead {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
-    .result {
-      margin-top: 10px;
-      color: var(--muted);
-    }
-
-    .inline-code {
-      display: inline-block;
-      padding: 1px 8px;
-      border-radius: 8px;
-      background: rgba(126,231,135,0.1);
-      border: 1px solid rgba(126,231,135,0.14);
-      color: var(--green);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    }
-
-    .checklist {
-      margin: 14px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .mini-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .mini-nav a {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--line);
-      color: var(--text);
-    }
-
-    .mini-nav a:hover {
-      text-decoration: none;
-      background: rgba(255,255,255,0.07);
-    }
-
-    @media (max-width: 980px) {
-      .layout { grid-template-columns: 1fr; }
-      .sidebar {
-        position: relative;
-        height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--line);
-      }
-      .content { padding: 20px; }
-      .lesson-grid { grid-template-columns: 1fr; }
-    }
-  </style>
-</head>
-<body>
-  <div class="layout">
-    <aside class="sidebar">
-      <div class="brand">
-        <div class="brand-icon">⌘</div>
-        <div>
-          <h1>Introduction à la programmation<br>Création de sites web</h1>
+          <h1>Création de sites web<br>Chapitre JavaScript</h1>
         </div>
       </div>
 
@@ -879,270 +318,175 @@ titre.textContent = "Bienvenue dans le cours";
       <div class="menu-title">Navigation</div>
       <ul class="menu">
         <li><a href="#home">Home</a></li>
-        <li><a href="#html-css">HTML / CSS</a></li>
-        <li><a href="#liens">Liens</a></li>
-        <li><a href="#tableaux">Tableaux</a></li>
-        <li><a href="#formulaires">Formulaires</a></li>
-        <li><a href="#couleurs">Couleurs</a></li>
-        <li><a href="#media">Audio / Vidéo</a></li>
-        <li><a href="#responsive">Responsive</a></li>
-        <li><a href="#javascript">JavaScript</a></li>
-        <li><a href="#dom">DOM</a></li>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#strings" class="active-link">Strings</a></li>
+      </ul>
+
+      <div class="menu-title">Strings</div>
+      <ul class="submenu">
+        <li><a href="#definition">C’est quoi ?</a></li>
+        <li><a href="#utilisation">Utilisation simple</a></li>
+        <li><a href="#methodes">Méthodes de String</a></li>
+        <li><a href="#concat">Concaténation</a></li>
+        <li><a href="#template">Template literals</a></li>
         <li><a href="#exercices">Exercices</a></li>
-      </ul>
-
-      <div class="menu-title">JavaScript</div>
-      <ul class="submenu">
-        <li><a href="#js-variables">Variables</a></li>
-        <li><a href="#js-conditions">Conditions</a></li>
-        <li><a href="#js-boucles">Boucles</a></li>
-        <li><a href="#js-dom">DOM</a></li>
-      </ul>
-
-      <div class="menu-title">Exercices</div>
-      <ul class="submenu">
-        <li><a href="#exo-liens" class="active-link">Série 1 — Liens</a></li>
-        <li><a href="#exo-concat">Série 2 — Concaténation</a></li>
-        <li><a href="#exo-boucles">Série 3 — Boucles</a></li>
-        <li><a href="#exo-dom">Série 4 — DOM</a></li>
       </ul>
     </aside>
 
     <main class="content">
-      <div class="breadcrumb">420-112 &gt; Notes de cours &gt; Exercices et contenu intégré</div>
+      <div class="breadcrumb">420-112 &gt; JavaScript &gt; Les chaînes de caractères</div>
 
       <section class="hero" id="home">
-        <h2>Un site de cours avec le contenu directement dans la page</h2>
+        <h2>LES CHAÎNES DE CARACTÈRES</h2>
         <p>
-          Cette version n’utilise plus des liens vers des PDF. Elle présente directement les notions essentielles et des exercices
-          dans un style proche de ton exemple : navigation à gauche, contenu au centre, blocs de code, résultats attendus et séries d’exercices.
+          Cette page montre le format à utiliser pour ton site : le contenu du cours est directement intégré dans le HTML,
+          avec un titre clair, des explications, des exemples de code et des exercices visibles sans ouvrir de PDF.
         </p>
-        <div class="notice">
-          Tu pourras continuer à ajouter d’autres chapitres exactement dans ce format : résumé, exemple, exercice, résultat attendu.
-        </div>
-        <div class="mini-nav">
-          <a href="#html-css">Commencer par HTML/CSS</a>
-          <a href="#javascript">Aller à JavaScript</a>
-          <a href="#exercices">Voir les exercices</a>
-        </div>
       </section>
 
-      <section class="section" id="html-css">
-        <h3>HTML / CSS — notions essentielles</h3>
+      <section class="section" id="intro">
+        <h3>Chapitre — JavaScript</h3>
         <p>
-          Le cours couvre la structure d’une page HTML, les liens hypertextes, les polices, les couleurs et images de fond,
-          les formulaires, ainsi que les éléments multimédias <span class="inline-code">audio</span> et <span class="inline-code">video</span>.
-          Les tableaux et la réactivité des pages font aussi partie du parcours.
+          En JavaScript, une chaîne de caractères représente un texte. Elle peut contenir des lettres, des chiffres,
+          des espaces et des symboles. Les chaînes sont utilisées pour afficher des messages, construire du contenu HTML,
+          manipuler des formulaires et produire des réponses visibles à l’écran.
+        </p>
+      </section>
+
+      <section class="section" id="strings">
+        <h3 id="definition">Les strings, c’est quoi ?</h3>
+        <p>
+          Une <strong>chaîne de caractères</strong> est une valeur textuelle. En JavaScript, on peut l’écrire avec des guillemets doubles,
+          des guillemets simples ou des accents graves. Une chaîne peut être stockée dans une variable puis affichée,
+          modifiée ou combinée avec d’autres valeurs.
+        </p>
+
+        <p>Exemple :</p>
+        <div class="code-block"><span class="kw">let</span> message <span class="acc">=</span> <span class="str">"Bonjour !"</span>;</div>
+      </section>
+
+      <section class="section" id="utilisation">
+        <h3>Utilisation simple</h3>
+        <p>Créer une chaîne et l’afficher dans la console ou dans la page.</p>
+
+        <div class="code-block"><span class="kw">let</span> nom <span class="acc">=</span> <span class="str">"Alice"</span>;
+
+console.log(nom);</div>
+
+        <p>Créer une phrase plus longue :</p>
+        <div class="code-block"><span class="kw">let</span> phrase <span class="acc">=</span> <span class="str">"J’apprends JavaScript dans mon cours de création de sites web."</span>;
+console.log(phrase);</div>
+      </section>
+
+      <section class="section" id="methodes">
+        <h3>Méthodes utiles de String</h3>
+        <p>
+          Une chaîne possède plusieurs méthodes pratiques pour lire ou transformer du texte.
         </p>
 
         <div class="lesson-grid">
-          <article class="card" id="liens">
-            <div class="tag">Séance — Liens</div>
-            <h4>Liens hypertextes</h4>
-            <p>Créer des liens relatifs, absolus, des ancres internes et des liens <span class="inline-code">mailto:</span>.</p>
-            <div class="code-block">&lt;nav&gt;
-  &lt;a href="#introduction"&gt;Introduction&lt;/a&gt;
-  &lt;a href="#services"&gt;Services&lt;/a&gt;
-  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
-&lt;/nav&gt;</div>
+          <article class="card">
+            <div class="tag">length</div>
+            <h4>Compter les caractères</h4>
+            <div class="code-block"><span class="kw">let</span> texte <span class="acc">=</span> <span class="str">"JavaScript"</span>;
+console.log(texte.length);</div>
           </article>
 
-          <article class="card" id="formulaires">
-            <div class="tag">Séance — Formulaires</div>
-            <h4>Formulaires</h4>
-            <p>Créer des zones de saisie, des listes, des cases à cocher et des boutons d’envoi.</p>
-            <div class="code-block">&lt;form&gt;
-  &lt;label for="nom"&gt;Nom&lt;/label&gt;
-  &lt;input id="nom" type="text" /&gt;
-  &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
-&lt;/form&gt;</div>
+          <article class="card">
+            <div class="tag">toUpperCase()</div>
+            <h4>Mettre en majuscules</h4>
+            <div class="code-block"><span class="kw">let</span> texte <span class="acc">=</span> <span class="str">"bonjour"</span>;
+console.log(texte.toUpperCase());</div>
           </article>
 
-          <article class="card" id="tableaux">
-            <div class="tag">Séance — Tableaux</div>
-            <h4>Tableaux HTML</h4>
-            <p>Structurer un tableau avec des rangées, des cellules d’en-tête et des cellules de données.</p>
-            <div class="code-block">&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Nom&lt;/th&gt;
-    &lt;th&gt;Note&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Sara&lt;/td&gt;
-    &lt;td&gt;92&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</div>
+          <article class="card">
+            <div class="tag">toLowerCase()</div>
+            <h4>Mettre en minuscules</h4>
+            <div class="code-block"><span class="kw">let</span> texte <span class="acc">=</span> <span class="str">"BONJOUR"</span>;
+console.log(texte.toLowerCase());</div>
           </article>
 
-          <article class="card" id="couleurs">
-            <div class="tag">Séance — Couleurs</div>
-            <h4>Couleurs et arrière-plans</h4>
-            <p>Appliquer des couleurs, améliorer le contraste et utiliser des images de fond de manière lisible.</p>
-            <div class="code-block">body {
-  background-color: #0f172a;
-  color: white;
-  background-image: url("fond.jpg");
-  background-size: cover;
-}</div>
-          </article>
-
-          <article class="card" id="media">
-            <div class="tag">Séance — Audio / Vidéo</div>
-            <h4>Médias HTML5</h4>
-            <p>Intégrer du son et de la vidéo dans une page Web avec des contrôles de lecture.</p>
-            <div class="code-block">&lt;audio controls&gt;
-  &lt;source src="audio.mp3" type="audio/mpeg" /&gt;
-&lt;/audio&gt;
-
-&lt;video controls width="420"&gt;
-  &lt;source src="video.mp4" type="video/mp4" /&gt;
-&lt;/video&gt;</div>
-          </article>
-
-          <article class="card" id="responsive">
-            <div class="tag">Séance — Responsive</div>
-            <h4>Réactivité</h4>
-            <p>Adapter l’affichage d’une page aux petits écrans avec le viewport, Flexbox et les media queries.</p>
-            <div class="code-block">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
-
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-  }
-}</div>
+          <article class="card">
+            <div class="tag">trim()</div>
+            <h4>Enlever les espaces inutiles</h4>
+            <div class="code-block"><span class="kw">let</span> texte <span class="acc">=</span> <span class="str">"   salut   "</span>;
+console.log(texte.trim());</div>
           </article>
         </div>
       </section>
 
-      <section class="section" id="javascript">
-        <h3>JavaScript — notions essentielles</h3>
+      <section class="section" id="concat">
+        <h3>Concaténation</h3>
         <p>
-          Le bloc JavaScript introduit les variables et constantes, les opérateurs, les structures conditionnelles, les boucles,
-          puis le modèle DOM et les méthodes d’accès aux éléments HTML. Les objectifs incluent l’explication du DOM et la manipulation du contenu d’une page avec JavaScript. fileciteturn1file4L3-L20 fileciteturn1file18L3-L8 fileciteturn1file5L11-L20 fileciteturn1file15L4-L10 fileciteturn1file7L4-L16
+          La concaténation consiste à assembler plusieurs morceaux de texte pour former une seule phrase.
+          On peut utiliser l’opérateur <span class="inline-code">+</span>.
         </p>
 
-        <div class="lesson-grid">
-          <article class="card" id="js-variables">
-            <div class="tag">JS — Variables</div>
-            <h4>Variables et opérateurs</h4>
-            <p>Les documents présentent l’utilisation de <span class="inline-code">var</span> et <span class="inline-code">let</span>, ainsi que les opérateurs d’assignation et de comparaison. fileciteturn1file9L4-L18 fileciteturn1file4L3-L16</p>
-            <div class="code-block"><span class="kw">let</span> nomProduit <span class="acc">=</span> <span class="str">"Clavier"</span>;
-<span class="kw">let</span> quantite <span class="acc">=</span> 5;
-<span class="kw">let</span> prixUnitaire <span class="acc">=</span> 24.99;</div>
-          </article>
+        <div class="code-block"><span class="kw">let</span> prenom <span class="acc">=</span> <span class="str">"Sofia"</span>;
+<span class="kw">let</span> ville <span class="acc">=</span> <span class="str">"Montréal"</span>;
 
-          <article class="card" id="js-conditions">
-            <div class="tag">JS — Conditions</div>
-            <h4>Conditions</h4>
-            <p>La structure conditionnelle <span class="inline-code">if</span> est introduite avec l’idée qu’une accolade est toujours préférable pour rendre le code plus sûr et lisible. fileciteturn1file18L3-L8</p>
-            <div class="code-block"><span class="kw">if</span> (note &gt;= 60) {
-  message <span class="acc">=</span> <span class="str">"Réussi"</span>;
-} <span class="kw">else</span> {
-  message <span class="acc">=</span> <span class="str">"À reprendre"</span>;
-}</div>
-          </article>
+<span class="kw">let</span> resultat <span class="acc">=</span> <span class="str">"Bonjour, je m’appelle "</span> + prenom + <span class="str">" et j’habite à "</span> + ville + <span class="str">"."</span>;
+console.log(resultat);</div>
 
-          <article class="card" id="js-boucles">
-            <div class="tag">JS — Boucles</div>
-            <h4>Boucles</h4>
-            <p>Le cours distingue <span class="inline-code">for</span>, <span class="inline-code">while</span>, <span class="inline-code">do...while</span>, mais aussi <span class="inline-code">for...of</span> et <span class="inline-code">for...in</span>. Il précise aussi que <span class="inline-code">do...while</span> s’exécute au moins une fois. fileciteturn1file3L5-L13 fileciteturn1file5L1-L8</p>
-            <div class="code-block"><span class="kw">for</span> (<span class="kw">let</span> i <span class="acc">=</span> 1; i &lt;= 5; i++) {
-  console.log(<span class="str">"J’aime faire de la programmation en JavaScript."</span>);
-}</div>
-          </article>
+        <div class="result">Résultat attendu : <span class="inline-code">Bonjour, je m’appelle Sofia et j’habite à Montréal.</span></div>
+      </section>
 
-          <article class="card" id="dom">
-            <div class="tag">JS — DOM</div>
-            <h4>DOM et manipulation</h4>
-            <p>Le DOM est présenté comme le modèle qui permet d’accéder aux éléments HTML pour modifier textes, styles et attributs, via des méthodes d’accès au document et des propriétés comme <span class="inline-code">innerHTML</span> et <span class="inline-code">textContent</span>. fileciteturn1file15L4-L10 fileciteturn1file7L6-L16 fileciteturn1file0L9-L16</p>
-            <div class="code-block"><span class="kw">const</span> titre <span class="acc">=</span> document.getElementById(<span class="str">"titre"</span>);
-titre.textContent <span class="acc">=</span> <span class="str">"Bienvenue dans le cours"</span>;</div>
-          </article>
-        </div>
+      <section class="section" id="template">
+        <h3>Template literals</h3>
+        <p>
+          Une autre façon moderne d’insérer des variables dans une phrase consiste à utiliser les accents graves
+          et la syntaxe <span class="inline-code">${variable}</span>.
+        </p>
+
+        <div class="code-block"><span class="kw">let</span> produit <span class="acc">=</span> <span class="str">"Clavier"</span>;
+<span class="kw">let</span> prix <span class="acc">=</span> 24.99;
+
+<span class="kw">let</span> message <span class="acc">=</span> <span class="str">`Le produit ${produit} coûte ${prix}$`</span>;
+console.log(message);</div>
       </section>
 
       <section class="section" id="exercices">
-        <h3>Exercices intégrés dans la page</h3>
-        <p>
-          Voici des exercices affichés directement dans le site, avec le style “notes + exercice + résultat attendu”.
-        </p>
+        <h3>Exercices</h3>
 
-        <article class="exercise" id="exo-liens">
-          <h4>🔗 Exo 1 – Liens internes avec ancres</h4>
-          <div class="lead">Crée une page HTML avec trois sections différentes : <strong>Introduction</strong>, <strong>Services</strong> et <strong>Contact</strong>. Ajoute une barre de navigation qui permet d’aller à chaque section.</div>
-          <div class="code-block">&lt;nav&gt;
-  &lt;a href="#introduction"&gt;Introduction&lt;/a&gt;
-  &lt;a href="#services"&gt;Services&lt;/a&gt;
-  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
-&lt;/nav&gt;
-
-&lt;section id="introduction"&gt;...&lt;/section&gt;
-&lt;section id="services"&gt;...&lt;/section&gt;
-&lt;section id="contact"&gt;...&lt;/section&gt;</div>
-          <div class="result">Résultat attendu : les liens du menu font défiler la page vers la bonne section.</div>
+        <article class="exercise">
+          <h4>🧪 Exo 1 — Déclarer une chaîne</h4>
+          <div class="lead">Déclare une variable appelée <span class="inline-code">cours</span> contenant le texte <strong>Création de sites web</strong>, puis affiche-la.</div>
+          <div class="code-block"><span class="kw">let</span> cours <span class="acc">=</span> <span class="str">"Création de sites web"</span>;
+console.log(cours);</div>
         </article>
 
-        <article class="exercise" id="exo-tableaux">
-          <h4>📊 Exo 2 – Tableau de notes</h4>
-          <div class="lead">Crée un tableau HTML qui affiche le nom de trois étudiants et leur note finale.</div>
-          <div class="code-block">&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Étudiant&lt;/th&gt;
-    &lt;th&gt;Note&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Adam&lt;/td&gt;
-    &lt;td&gt;88&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</div>
-          <div class="result">Résultat attendu : un tableau lisible avec une ligne d’en-tête et des données.</div>
+        <article class="exercise">
+          <h4>🧪 Exo 2 — Longueur d’une chaîne</h4>
+          <div class="lead">Crée une variable <span class="inline-code">mot</span> contenant <strong>JavaScript</strong> et affiche sa longueur avec <span class="inline-code">length</span>.</div>
+          <div class="code-block"><span class="kw">let</span> mot <span class="acc">=</span> <span class="str">"JavaScript"</span>;
+console.log(mot.length);</div>
+          <div class="result">Résultat attendu : <span class="inline-code">10</span></div>
         </article>
 
-        <article class="exercise" id="exo-formulaires">
-          <h4>📝 Exo 3 – Formulaire de contact</h4>
-          <div class="lead">Crée un formulaire avec un champ nom, un champ courriel et un bouton d’envoi.</div>
-          <div class="code-block">&lt;form&gt;
-  &lt;label for="nom"&gt;Nom&lt;/label&gt;
-  &lt;input id="nom" type="text" /&gt;
-
-  &lt;label for="courriel"&gt;Courriel&lt;/label&gt;
-  &lt;input id="courriel" type="email" /&gt;
-
-  &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
-&lt;/form&gt;</div>
-          <div class="result">Résultat attendu : le formulaire affiche deux champs et un bouton.</div>
+        <article class="exercise">
+          <h4>🧪 Exo 3 — Mettre en majuscules</h4>
+          <div class="lead">Transforme le texte <strong>bonjour les étudiants</strong> en majuscules.</div>
+          <div class="code-block"><span class="kw">let</span> texte <span class="acc">=</span> <span class="str">"bonjour les étudiants"</span>;
+console.log(texte.toUpperCase());</div>
         </article>
 
-        <article class="exercise" id="exo-concat">
-          <h4>🧪 Exo 4 – Concaténation de chaînes</h4>
-          <div class="lead">Déclare les variables suivantes et affiche une phrase sur une seule ligne avec concaténation.</div>
+        <article class="exercise">
+          <h4>🧪 Exo 4 — Concaténation simple</h4>
+          <div class="lead">Déclare les variables suivantes et affiche une phrase complète.</div>
           <div class="code-block"><span class="kw">let</span> nomProduit <span class="acc">=</span> <span class="str">"Clavier"</span>;
 <span class="kw">let</span> quantite <span class="acc">=</span> 5;
 <span class="kw">let</span> prixUnitaire <span class="acc">=</span> 24.99;
 
-<span class="kw">let</span> message <span class="acc">=</span> quantite + <span class="str">" "</span> + nomProduit + <span class="str">" à "</span> + prixUnitaire + <span class="str">"$ l’unité"</span>;</div>
+<span class="kw">let</span> message <span class="acc">=</span> quantite + <span class="str">" "</span> + nomProduit + <span class="str">" à "</span> + prixUnitaire + <span class="str">"$ l’unité"</span>;
+console.log(message);</div>
           <div class="result">Résultat attendu : <span class="inline-code">5 Clavier à 24.99$ l’unité</span></div>
         </article>
 
-        <article class="exercise" id="exo-boucles">
-          <h4>🔁 Exo 5 – Répéter un message avec une boucle</h4>
-          <div class="lead">Avec une boucle <span class="inline-code">for</span>, affiche cinq fois : <em>J’aime faire de la programmation en JavaScript.</em></div>
-          <div class="code-block"><span class="kw">for</span> (<span class="kw">let</span> i <span class="acc">=</span> 1; i &lt;= 5; i++) {
-  console.log(<span class="str">"J’aime faire de la programmation en JavaScript."</span>);
-}</div>
-          <div class="result">Résultat attendu : le message apparaît 5 fois.</div>
-        </article>
-
-        <article class="exercise" id="exo-dom">
-          <h4>🧩 Exo 6 – Modifier un titre avec le DOM</h4>
-          <div class="lead">Sélectionne un titre avec <span class="inline-code">getElementById()</span> et remplace son contenu.</div>
-          <div class="code-block">&lt;h1 id="titre"&gt;Ancien titre&lt;/h1&gt;
-
-&lt;script&gt;
-const titre = document.getElementById("titre");
-titre.textContent = "Bienvenue dans le cours";
-&lt;/script&gt;</div>
-          <div class="result">Résultat attendu : le texte du titre change dans la page.</div>
+        <article class="exercise">
+          <h4>🧪 Exo 5 — Template literal</h4>
+          <div class="lead">Réécris l’exercice précédent avec un template literal.</div>
+          <div class="code-block"><span class="kw">let</span> message <span class="acc">=</span> <span class="str">`${quantite} ${nomProduit} à ${prixUnitaire}$ l’unité`</span>;
+console.log(message);</div>
         </article>
       </section>
     </main>
