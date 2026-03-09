@@ -320,6 +320,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#intro">Intro</a></li>
         <li><a href="#strings" class="active-link">Strings</a></li>
+        <li><a href="#html-base">HTML</a></li>
       </ul>
 
       <div class="menu-title">Strings</div>
@@ -330,6 +331,15 @@
         <li><a href="#concat">Concaténation</a></li>
         <li><a href="#template">Template literals</a></li>
         <li><a href="#exercices">Exercices</a></li>
+      </ul>
+
+      <div class="menu-title">HTML</div>
+      <ul class="submenu">
+        <li><a href="#html-base">Structure de base</a></li>
+        <li><a href="#html-titres">Titres et paragraphes</a></li>
+        <li><a href="#html-listes">Listes</a></li>
+        <li><a href="#html-images">Images et liens</a></li>
+        <li><a href="#html-exercices">Exercices HTML</a></li>
       </ul>
     </aside>
 
@@ -487,6 +497,106 @@ console.log(message);</div>
           <div class="lead">Réécris l’exercice précédent avec un template literal.</div>
           <div class="code-block"><span class="kw">let</span> message <span class="acc">=</span> <span class="str">`${quantite} ${nomProduit} à ${prixUnitaire}$ l’unité`</span>;
 console.log(message);</div>
+        </article>
+      </section>
+
+      <section class="section" id="html-base">
+        <h3>INTRODUCTION À HTML</h3>
+        <p>
+          HTML sert à organiser le contenu d’une page Web. C’est avec HTML qu’on crée les titres, les paragraphes,
+          les listes, les images, les liens et la structure générale du document.
+        </p>
+      </section>
+
+      <section class="section" id="html-titres">
+        <h3>Structure de base et texte</h3>
+        <p>
+          Une page HTML commence généralement avec <span class="inline-code">&lt;!DOCTYPE html&gt;</span>, puis contient
+          les balises <span class="inline-code">html</span>, <span class="inline-code">head</span> et <span class="inline-code">body</span>.
+          Dans le corps de la page, on place ensuite les titres et les paragraphes.
+        </p>
+
+        <div class="code-block">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;title&gt;Ma première page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Bienvenue&lt;/h1&gt;
+  &lt;p&gt;Ceci est mon premier paragraphe.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</div>
+      </section>
+
+      <section class="section" id="html-listes">
+        <h3>Listes</h3>
+        <p>
+          Les listes permettent d’afficher plusieurs éléments liés entre eux. On utilise
+          <span class="inline-code">ul</span> pour une liste non ordonnée et <span class="inline-code">ol</span>
+          pour une liste ordonnée.
+        </p>
+
+        <div class="lesson-grid">
+          <article class="card">
+            <div class="tag">Liste à puces</div>
+            <div class="code-block">&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</div>
+          </article>
+
+          <article class="card">
+            <div class="tag">Liste numérotée</div>
+            <div class="code-block">&lt;ol&gt;
+  &lt;li&gt;Ouvrir VS Code&lt;/li&gt;
+  &lt;li&gt;Créer un fichier index.html&lt;/li&gt;
+  &lt;li&gt;Écrire le code HTML&lt;/li&gt;
+&lt;/ol&gt;</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="html-images">
+        <h3>Images et liens</h3>
+        <p>
+          Une image se place avec la balise <span class="inline-code">img</span> et un lien se crée avec la balise
+          <span class="inline-code">a</span>. Ces deux éléments sont essentiels pour rendre une page utile et navigable.
+        </p>
+
+        <div class="code-block">&lt;img src="image.jpg" alt="Description de l'image" width="250" /&gt;
+
+&lt;a href="https://developer.mozilla.org/fr/"&gt;Consulter MDN&lt;/a&gt;</div>
+      </section>
+
+      <section class="section" id="html-exercices">
+        <h3>Exercices HTML</h3>
+
+        <article class="exercise">
+          <h4>🧱 Exo 1 — Première page HTML</h4>
+          <div class="lead">Crée une page avec un titre principal, un sous-titre et deux paragraphes de présentation.</div>
+          <div class="code-block">&lt;h1&gt;Mon site Web&lt;/h1&gt;
+&lt;h2&gt;Présentation&lt;/h2&gt;
+&lt;p&gt;Je découvre HTML.&lt;/p&gt;
+&lt;p&gt;Je vais ensuite apprendre CSS et JavaScript.&lt;/p&gt;</div>
+        </article>
+
+        <article class="exercise">
+          <h4>🧱 Exo 2 — Liste de technologies</h4>
+          <div class="lead">Crée une liste à puces contenant trois technologies du Web.</div>
+          <div class="code-block">&lt;ul&gt;
+  &lt;li&gt;HTML&lt;/li&gt;
+  &lt;li&gt;CSS&lt;/li&gt;
+  &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</div>
+        </article>
+
+        <article class="exercise">
+          <h4>🧱 Exo 3 — Image et lien</h4>
+          <div class="lead">Ajoute une image et un lien vers un site d’apprentissage du Web.</div>
+          <div class="code-block">&lt;img src="html.png" alt="Logo HTML" width="160" /&gt;
+&lt;a href="https://developer.mozilla.org/fr/"&gt;Apprendre le Web&lt;/a&gt;</div>
         </article>
       </section>
     </main>
